@@ -1,0 +1,42 @@
+{
+  "name": "overbots",
+  "version": "0.0.1",
+  "description": "OverBots Incremental Game",
+  "main": "index.js",
+  "dependencies": {
+    "bs-platform": "^1.7.3",
+    "bucklescript-tea": "^0.3.2"
+  },
+  "devDependencies": {
+    "bs-platform": "^1.7.3",
+    "bucklescript-tea": "^0.3.2",
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^3.2.2"
+  },
+  "scripts": {
+    "build:bsb": "bsb -make-world",
+    "build:js": "rollup -c",
+    "build": "run-s build:bsb build:js",
+    "watch:bsb": "bsb -w",
+    "watch:js": "rollup -c -w",
+    "prewatch": "run-s build",
+    "watch": "run-p watch:bsb watch:js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OvermindDL1/overbots.git"
+  },
+  "keywords": [
+    "bucklescript",
+    "bucklescript-tea"
+  ],
+  "author": "OvermindDL1",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/OvermindDL1/overbots/issues"
+  },
+  "homepage": "https://github.com/OvermindDL1/overbots#readme"
+}
