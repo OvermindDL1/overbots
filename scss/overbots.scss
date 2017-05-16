@@ -42,6 +42,33 @@
   .container-resources {
     flex: 0 0 256px;
     order: 0;
+
+    .category-title {
+      border-bottom: solid 1px #000;
+      flex: 0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .resource {
+      border: dashed 1px #000;
+      display: flex;
+      flex: 0;
+      flex-direction: row;
+    }
+
+    .resource-name {
+      display: flex;
+      flex: 2;
+      font-weight: bold;
+      width: 50%;
+    }
+
+    .resource-value {
+      display: flex;
+      flex: 1;
+      padding-left: 8px;
+    }
   }
 
   .container-actions {

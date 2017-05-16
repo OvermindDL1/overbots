@@ -2,8 +2,11 @@ open Tea
 open Overbots_types
 
 let init () =
-  let model ={
-    notUsedYet = 42;
+  let model = {
+    msgs = [];
+    resource_values = Overbots_resource.init_resources_values;
+    bool_flags = init_bool_flags;
+    int_flags = init_int_flags;
   } in
   (model, Cmd.none)
 
