@@ -8,9 +8,14 @@
     "bucklescript-tea": "^0.3.2"
   },
   "devDependencies": {
+    "autoprefixer": "^7.0.1",
     "bs-platform": "^1.7.3",
     "bucklescript-tea": "^0.3.2",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
+    "postcss": "^6.0.1",
+    "postcss-cli": "^4.0.0",
     "rollup": "^0.41.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^3.2.2"
@@ -18,11 +23,15 @@
   "scripts": {
     "build:bsb": "bsb -make-world",
     "build:js": "rollup -c",
-    "build": "run-s build:bsb build:js",
+    "build:scss": "node-sass --include-path scss scss/overbots.scss css/overbots.css",
+    "build:css": "postcss --use autoprefixer -o release/overbots.css css/overbots.css",
+    "build": "run-s build:bsb build:js build:scss build:css",
     "watch:bsb": "bsb -w",
     "watch:js": "rollup -c -w",
+    "watch:scss": "nodemon -e scss -x \"npm run build:scss\"",
+    "watch:css": "nodemon -e css -x \"npm run build:css\"",
     "prewatch": "run-s build",
-    "watch": "run-p watch:bsb watch:js",
+    "watch": "run-p watch:bsb watch:js watch:scss watch:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,3 +1,4 @@
-node_modules
-lib/bs
+/node_modules
+/lib/bs
+/css
 .merlin

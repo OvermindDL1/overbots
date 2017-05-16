@@ -2,6 +2,5 @@
     "name": "overbots",
     "sources": { "dir" : "src"},
     "package-specs": ["es6"],
-    "bs-dependencies": ["bucklescript-tea"],
-    "generate-merlin": true
+    "bs-dependencies": ["bucklescript-tea"]
 }
