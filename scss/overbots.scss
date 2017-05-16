@@ -1,0 +1,60 @@
+
+.overbots {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+
+  // Generic
+  .container {
+    border: solid 1px #000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    >.title {
+      border-bottom: solid 1px #000;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    >.scroller {
+      overflow: auto;
+    }
+  }
+
+  // Specific
+  .header {
+    border-bottom: solid 1px #000;
+    flex: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .container-resources {
+    flex: 0 0 256px;
+    order: 0;
+  }
+
+  .container-actions {
+    flex: 0 0 256px;
+    order: 2;
+  }
+
+  .container-scanner {
+    flex: 1 0 256px;
+    order: 1;
+  }
+
+  .container-msgs {
+    flex: 0 0 192px;
+  }
+}

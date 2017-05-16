@@ -1,12 +1,5 @@
 open Tea
-
-type msg =
-  | NothingYet
-  [@@bs.deriving {accessors}]
-
-type model = {
-  notUsedYet : int;
-}
+open Overbots_types
 
 let init () =
   let model ={
@@ -20,17 +13,10 @@ let update model = function
 let subscriptions _model =
   Sub.none
 
-let view model =
-  let open Html in
-  div
-    []
-    [ text (string_of_int model.notUsedYet)
-    ]
-
 let main =
   App.standardProgram {
     init;
     update;
-    view;
+    view = Overbots_view.view;
     subscriptions;
   }
