@@ -1,5 +1,6 @@
 
 open Overbots_types
+open Overbots_flags
 
 module type Resource = sig
   val id : resource_flag
@@ -10,19 +11,19 @@ end
 
 module Energy : Resource = struct
   let id = Energy
-  let shown _model = true
+  let shown model = bool_flag_exists InternalPowerEnabled model
   let get_value_range _model = 0.0, 100.0
 end
 
 module IronOxide : Resource = struct
   let id = IronOxide
-  let shown _model = true
+  let shown model = bool_flag_exists DrillDeployed model
   let get_value_range _model = 0.0, 10.0
 end
 
 module RawSilicon : Resource = struct
   let id = RawSilicon
-  let shown _model = true
+  let shown model = bool_flag_exists DrillDeployed model
   let get_value_range _model = 0.0, 2.0
 end
 
@@ -75,6 +76,19 @@ let set_resource_value rid value model =
 let add_resource_value rid delta model =
   let value = delta +. get_resource_value rid model in
   set_resource_value rid value model
+
+
+let cost_resource rid delta model =
+  match add_resource_value rid (-.delta) model with
+  | ValueTooLow -> None
+  | ValueTooHigh _ -> None
+  | ValueSuccess model -> Some model
+
+let cost_resources resources model =
+  let aux model (rid, amt) = match model with
+    | None -> None
+    | Some model -> cost_resource rid amt model
+  in List.fold_left aux (Some model) resources
 
 
 let init_resources_values =

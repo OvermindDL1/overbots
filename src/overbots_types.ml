@@ -1,8 +1,5 @@
 
 
-type msg =
-  | NothingYet
-[@@bs.deriving {accessors}]
 
 (* Message Types *)
 type game_msg =
@@ -20,6 +17,7 @@ type resource_value = float
 
 (* Tagged Data Storage *)
 type bool_flag =
+  | InternalPowerEnabled
   | SolarPanelsReadyToUnfold
   | SolarPanelsGenerating
   | DrillDeployed
@@ -30,19 +28,45 @@ let init_bool_flags = BoolFlagSet.empty
 
 
 type int_flag =
-  | NoIntFlagsYet
+  | TimeActionIdx
 module IntFlagMap = Map.Make(struct type t = int_flag let compare = compare end)
 type int_flags = int IntFlagMap.t
 let init_int_flags =
   let open IntFlagMap in
   empty
-  |> add NoIntFlagsYet 0
+  |> add TimeActionIdx 0
 
+
+
+type float_flag =
+  | BasicSolarPanelSelfGeneration
+module FloatFlagMap = Map.Make(struct type t = float_flag let compare = compare end)
+type float_flags = float FloatFlagMap.t
+let init_float_flags =
+  let open FloatFlagMap in
+  empty
+  |> add BasicSolarPanelSelfGeneration 0.0
+
+
+
+type button_id =
+  | UnfoldSolarPanels
+  | DeployDrill
+
+
+type msg =
+  | UpdateFrame of Tea.AnimationFrame.t
+  | ActionButtonClicked of button_id
+[@@bs.deriving {accessors}]
 
 
 type model = {
+  start_realtime : Tea.Time.t;
+  current_realtime : Tea.Time.t;
+  gametime : Tea.Time.t;
   msgs : game_msg list;
   resource_values : resource_value ResourceMap.t;
   bool_flags : bool_flags;
   int_flags : int_flags;
+  float_flags : float_flags;
 }

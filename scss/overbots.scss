@@ -15,6 +15,7 @@
 
     >.title {
       border-bottom: solid 1px #000;
+      font-size: 18px;
       font-weight: bold;
       text-align: center;
     }
@@ -61,7 +62,6 @@
       display: flex;
       flex: 2;
       font-weight: bold;
-      width: 50%;
     }
 
     .resource-value {
@@ -74,6 +74,22 @@
   .container-actions {
     flex: 0 0 256px;
     order: 2;
+
+    .action-category {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .category-title {
+      border-bottom: solid 1px #000;
+      flex: 0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .action-button {
+      flex: 1;
+    }
   }
 
   .container-scanner {
