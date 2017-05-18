@@ -54,17 +54,19 @@ let calculate_resource_deltas model transformers =
   List.fold_left (calculate_resource_delta model) init_resources_values transformers
 
 
-let calculate_delta_to_next_filled model resource_deltas =
-  ResourceMap.fold (fun rid delta old_time ->
-      if delta = 0.0 then old_time else
-      let value = ResourceMap.find rid model.resource_values in
-      let module R = (val get_resource_module rid) in
-      let rmin, rmax = R.get_value_range model in
-      let at_time = if delta > 0.0 then (rmax-.value) /. delta else (value-.rmin) /. delta in
-      if at_time > 0.0 && at_time < old_time
-      then at_time
-      else old_time
-    ) resource_deltas max_float
+let calculate_delta_to_next_filled model rid delta old_time =
+    if delta = 0.0 then old_time else
+    let value = ResourceMap.find rid model.resource_values in
+    let module R = (val get_resource_module rid) in
+    let rmin, rmax = R.get_value_range model in
+    if value >= rmax || value <= rmin then old_time else
+    let at_time = if delta > 0.0 then (rmax-.value) /. delta else (value-.rmin) /. delta in
+    if at_time > 0.0 && at_time < old_time
+    then at_time
+    else old_time
+
+let calculate_deltas_to_next_filled model resource_deltas =
+  ResourceMap.fold (calculate_delta_to_next_filled model) resource_deltas max_float
 
 
 let apply_resource_deltas model resource_deltas cur_time =
@@ -85,7 +87,7 @@ let rec update_transformations model new_time =
       let transformers = enabled_transformers model in
       transformers, calculate_resource_deltas model transformers
     else model.cache.transformers, model.cache.resource_deltas in
-  let time_to_next_filled = model.gametime +. calculate_delta_to_next_filled model resource_deltas in
+  let time_to_next_filled = model.gametime +. calculate_deltas_to_next_filled model resource_deltas in
   let time_slice = min time_to_next_filled new_time in
   let model = apply_resource_deltas model resource_deltas time_slice in
   if time_slice >= new_time

@@ -5572,21 +5572,31 @@ function calculate_resource_deltas(model, transformers) {
             }, init_resources_values, transformers);
 }
 
-function calculate_delta_to_next_filled(model, resource_deltas) {
-  return _3(ResourceMap[/* fold */10], function (rid, delta, old_time) {
-              if (delta === 0.0) {
-                return old_time;
-              } else {
-                var value = _2(ResourceMap[/* find */21], rid, model[/* resource_values */4]);
-                var R = get_resource_module(rid);
-                var match = _1(R[/* get_value_range */2], model);
-                var at_time = delta > 0.0 ? (match[1] - value) / delta : (value - match[0]) / delta;
-                if (at_time > 0.0 && at_time < old_time) {
-                  return at_time;
-                } else {
-                  return old_time;
-                }
-              }
+function calculate_delta_to_next_filled(model, rid, delta, old_time) {
+  if (delta === 0.0) {
+    return old_time;
+  } else {
+    var value = _2(ResourceMap[/* find */21], rid, model[/* resource_values */4]);
+    var R = get_resource_module(rid);
+    var match = _1(R[/* get_value_range */2], model);
+    var rmax = match[1];
+    var rmin = match[0];
+    if (value >= rmax || value <= rmin) {
+      return old_time;
+    } else {
+      var at_time = delta > 0.0 ? (rmax - value) / delta : (value - rmin) / delta;
+      if (at_time > 0.0 && at_time < old_time) {
+        return at_time;
+      } else {
+        return old_time;
+      }
+    }
+  }
+}
+
+function calculate_deltas_to_next_filled(model, resource_deltas) {
+  return _3(ResourceMap[/* fold */10], function (param, param$1, param$2) {
+              return calculate_delta_to_next_filled(model, param, param$1, param$2);
             }, resource_deltas, max_float);
 }
 
@@ -5620,7 +5630,7 @@ function update_transformations(_model, new_time) {
       ];
     }
     var resource_deltas = match[1];
-    var time_to_next_filled = model[/* gametime */2] + calculate_delta_to_next_filled(model, resource_deltas);
+    var time_to_next_filled = model[/* gametime */2] + calculate_deltas_to_next_filled(model, resource_deltas);
     var time_slice = min(time_to_next_filled, new_time);
     var model$1 = apply_resource_deltas(model, resource_deltas, time_slice);
     if (time_slice >= new_time) {
