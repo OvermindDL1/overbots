@@ -4,6 +4,7 @@
 (* Message Types *)
 type game_msg =
   | TimeMsg of Tea.Time.t * string
+[@@bs.deriving {accessors}]
 
 
 (* Resource Storage *)
@@ -11,6 +12,7 @@ type resource_flag =
   | Energy
   | IronOxide
   | RawSilicon
+[@@bs.deriving {accessors}]
 module ResourceMap = Map.Make(struct type t = resource_flag let compare = compare end)
 type resource_value = float
 
@@ -21,6 +23,7 @@ type bool_flag =
   | SolarPanelsReadyToUnfold
   | SolarPanelsGenerating
   | DrillDeployed
+[@@bs.deriving {accessors}]
 module BoolFlagSet = Set.Make(struct type t = bool_flag let compare = compare end)
 type bool_flags = BoolFlagSet.t
 let init_bool_flags = BoolFlagSet.empty
@@ -29,6 +32,7 @@ let init_bool_flags = BoolFlagSet.empty
 
 type int_flag =
   | TimeActionIdx
+[@@bs.deriving {accessors}]
 module IntFlagMap = Map.Make(struct type t = int_flag let compare = compare end)
 type int_flags = int IntFlagMap.t
 let init_int_flags =
@@ -70,6 +74,8 @@ end
 type msg =
   | UpdateFrame of Tea.AnimationFrame.t
   | ActionButtonClicked of button_id
+  | LoadData of string
+  | SaveData
 [@@bs.deriving {accessors}]
 
 
@@ -88,5 +94,6 @@ and model = {
   float_flags : float_flags;
   cache : cache;
 }
+[@@bs.deriving {accessors}]
 
 module type Transformer = UTransformer with type model = model

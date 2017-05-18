@@ -1,6 +1,9 @@
 open Tea
 open Overbots_types
 
+
+let serialized_name = "Overbots"
+
 let init () =
   let model = {
     start_realtime = -1.0;
@@ -13,7 +16,11 @@ let init () =
     float_flags = init_float_flags;
     cache = Overbots_resource.init_cache;
   } in
-  (model, Cmd.none)
+  let load_data_task = Ex.LocalStorage.getItem serialized_name in
+  let open Tea.Result in
+  (model, Cmd.batch [
+      Tea_task.attemptOpt (function | Ok s -> Some (LoadData s) | Error _e -> None) load_data_task;
+    ])
 
 let update model = function
   | UpdateFrame timeinfo ->
@@ -26,10 +33,22 @@ let update model = function
     in Overbots_update.update_state model time
   | ActionButtonClicked bid ->
     Overbots_buttons.perform_button model bid
+  | LoadData "" -> (model, Cmd.none)
+  | LoadData json_string ->
+    let open Tea.Result in
+    begin match Overbots_serialization.model_of_json_string json_string with
+      | Error _e -> (model, Tea_task.performOpt (fun _ -> None) (Ex.LocalStorage.setItem serialized_name ""))
+      | Ok model ->
+        (model, Cmd.none)
+    end
+  | SaveData ->
+    let json_string = Overbots_serialization.json_string_of_model 0 model in
+    (model, Tea_task.performOpt (fun _ -> None) (Ex.LocalStorage.setItem serialized_name json_string))
 
 let subscriptions _model =
   Sub.batch [
     AnimationFrame.every updateFrame;
+    Time.every (10.0 *. Time.second) (fun _ -> SaveData)
   ]
 
 let main =

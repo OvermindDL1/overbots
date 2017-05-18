@@ -19,15 +19,15 @@ let format_value value =
   else
     string_of_int (int_of_float value)
 
-let view_resources_category_resource model (rid, name, id) =
-  let r = Overbots_resource.get_resource_module rid in
-  let module R = (val r) in
+let view_resources_category_resource model r =
+  let module R = (val r : Overbots_resource.Resource) in
+  let rid = R.id in
   if not (R.shown model) then [] else
   let value = format_value (Overbots_resource.get_resource_value rid model) in
   let delta = format_value (ResourceMap.find rid model.cache.resource_deltas) in
   [ div
-      [ class' ("resource resource-"^id) ]
-      [ div [ class' "resource-name" ] [ text name ]
+      [ class' ("resource resource-"^R.idname) ]
+      [ div [ class' "resource-name" ] [ text (R.name model) ]
       ; div [ class' "resource-value" ] [ text value ]
       ; div [ class' "resource-delta" ] [ text delta; text "/s" ]
       ]

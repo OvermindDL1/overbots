@@ -6,6 +6,8 @@ module type Resource = sig
   val id : resource_flag
   val shown : model -> bool
   val get_value_range : model -> resource_value * resource_value
+  val idname : string
+  val name : model -> string
 end
 
 
@@ -13,44 +15,67 @@ module Energy : Resource = struct
   let id = Energy
   let shown model = bool_flag_exists InternalPowerEnabled model
   let get_value_range _model = 0.0, 100.0
+  let idname = "energy"
+  let name _model = "Energy"
 end
 
 module IronOxide : Resource = struct
   let id = IronOxide
   let shown model = bool_flag_exists DrillDeployed model
   let get_value_range _model = 0.0, 10.0
+  let idname = "ironoxide"
+  let name _model = "Iron Oxide"
 end
 
 module RawSilicon : Resource = struct
   let id = RawSilicon
   let shown model = bool_flag_exists DrillDeployed model
   let get_value_range _model = 0.0, 2.0
+  let idname = "rawsilicon"
+  let name _model = "RawSilicon"
 end
 
 
 
-let all_resources =
-  let open ResourceMap in
-  empty
-  |> add Energy (module Energy : Resource)
-  |> add IronOxide (module IronOxide : Resource)
-  |> add RawSilicon (module RawSilicon : Resource)
+let all_resources = [
+  (module Energy : Resource);
+  (module IronOxide);
+  (module RawSilicon);
+]
 
+let id_resource_mapping =
+  List.fold_left (fun map r ->
+      let module R = (val r : Resource) in
+      ResourceMap.add R.id r map
+    ) ResourceMap.empty all_resources
+
+module StringMap = Map.Make(String)
+let idname_resource_mapping =
+  List.fold_left (fun map r ->
+      let module R = (val r : Resource) in
+      StringMap.add R.idname r map
+    ) StringMap.empty all_resources
+
+
+let get_resource_module rid =
+  ResourceMap.find rid id_resource_mapping
+
+let get_resource_module_by_idname idname =
+  if StringMap.mem idname idname_resource_mapping
+  then Some (StringMap.find idname idname_resource_mapping)
+  else None
 
 let displayed_resources = [
   ("", "global", [
-      Energy, "Energy", "energy";
+      get_resource_module Energy;
     ]);
   ("Raw", "raw", [
-      IronOxide, "Iron Oxide", "ironoxide";
-      RawSilicon, "Raw Silicon", "rawsilicon";
+      get_resource_module IronOxide;
+      get_resource_module RawSilicon;
     ]);
 ]
 
 
-
-let get_resource_module rid =
-  ResourceMap.find rid all_resources
 
 
 let get_resource_value rid model =
@@ -92,9 +117,10 @@ let cost_resources resources model =
 
 
 let init_resources_values =
-  let resource_folder rid _r acc =
-    ResourceMap.add rid 0.0 acc in
-  ResourceMap.fold resource_folder all_resources ResourceMap.empty
+  let resource_folder acc r =
+    let module R = (val r : Resource) in
+    ResourceMap.add R.id 0.0 acc in
+  List.fold_left resource_folder ResourceMap.empty all_resources
 
 
 let init_cache = {
