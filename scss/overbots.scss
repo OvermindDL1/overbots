@@ -15,7 +15,7 @@
 
     >.title {
       border-bottom: solid 1px #000;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
     }
@@ -36,7 +36,7 @@
 
   .body {
     display: flex;
-    flex: 1;
+    flex: 3;
     flex-direction: row;
   }
 
@@ -69,6 +69,13 @@
       flex: 1;
       padding-left: 8px;
     }
+
+    .resource-delta {
+      display: flex;
+      flex: 1;
+      font-style: italic;
+      padding-left: 8px;
+    }
   }
 
   .container-actions {
@@ -98,6 +105,7 @@
   }
 
   .container-msgs {
-    flex: 0 0 192px;
+    // flex: 0 0 192px;
+    flex: 1;
   }
 }

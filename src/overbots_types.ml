@@ -48,10 +48,23 @@ let init_float_flags =
   |> add BasicSolarPanelSelfGeneration 0.0
 
 
-
 type button_id =
   | UnfoldSolarPanels
   | DeployDrill
+
+
+type resource_transformation =
+  | Generate of resource_flag * resource_value
+  | Consume of resource_flag * resource_value
+type resource_transformations = resource_transformation list
+type cache_resource_transformation = string * resource_transformations
+
+module type UTransformer = sig
+  type model
+  val name : model -> string
+  val enabled : model -> bool
+  val transformers : model -> resource_transformations
+end
 
 
 type msg =
@@ -60,7 +73,11 @@ type msg =
 [@@bs.deriving {accessors}]
 
 
-type model = {
+type cache = {
+  transformers : (module UTransformer with type model = model) list;
+  resource_deltas : resource_value ResourceMap.t;
+}
+and model = {
   start_realtime : Tea.Time.t;
   current_realtime : Tea.Time.t;
   gametime : Tea.Time.t;
@@ -69,4 +86,7 @@ type model = {
   bool_flags : bool_flags;
   int_flags : int_flags;
   float_flags : float_flags;
+  cache : cache;
 }
+
+module type Transformer = UTransformer with type model = model

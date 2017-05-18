@@ -11,6 +11,7 @@ let init () =
     bool_flags = init_bool_flags;
     int_flags = init_int_flags;
     float_flags = init_float_flags;
+    cache = Overbots_resource.init_cache;
   } in
   (model, Cmd.none)
 

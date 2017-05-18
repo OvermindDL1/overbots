@@ -13,8 +13,8 @@ let displayed_buttons = [
 
 
 let button_cost _model = function
-  | UnfoldSolarPanels -> [Energy, 100.0]
-  | DeployDrill -> [Energy, 50.0]
+  | UnfoldSolarPanels -> [Energy, 50.0]
+  | DeployDrill -> [Energy, 25.0]
 
 
 let button_enabled model = function
@@ -24,12 +24,12 @@ let button_enabled model = function
 
 let button_temporarily_disabled model = function
   | DeployDrill -> (cost_resources (button_cost model DeployDrill) model) == None
-  | _button -> false
+  | button -> (cost_resources (button_cost model button) model) == None
 
 
 let button_actions _model = function
-  | UnfoldSolarPanels -> [ActionSetBoolFlag SolarPanelsGenerating; ActionClearBoolFlag SolarPanelsReadyToUnfold; ActionAddMsg "Energy is now being generated, now to acquire simple minerals by drilling"]
-  | DeployDrill -> [ActionSetBoolFlag DrillDeployed; ActionAddMsg "Now that I've started acquiring resources I need to active my internal refineries to prepare the resources for use"]
+  | UnfoldSolarPanels -> [ActionSetFloatFlag (BasicSolarPanelSelfGeneration, 1.0); ActionSetBoolFlag SolarPanelsGenerating; ActionClearBoolFlag SolarPanelsReadyToUnfold; ActionAddMsg "Energy is now being generated, now to acquire simple minerals by drilling"]
+  | DeployDrill -> [ActionSetBoolFlag DrillDeployed; ActionAddMsg "Now that I've started acquiring resources I need to activate my internal refineries to prepare the resources for use"]
 
 
 let perform_button orig_model id =

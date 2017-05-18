@@ -36,6 +36,7 @@ let perform_action model = function
 
 let perform_actions model actions =
   List.fold_left perform_action model actions
+  |> reset_cache
 
 
 type timeaction = {
@@ -46,9 +47,9 @@ type timeaction = {
 let init_timeaction at actions = {at; actions}
 
 let timeactions = [|
-  init_timeaction 0.0 [ActionAddResourceAmount (Energy, 100.0)];
+  init_timeaction 0.0 [ActionAddResourceAmount (Energy, 100.0); ActionSetFloatFlag (BasicSolarPanelSelfGeneration, 100.0)];
   init_timeaction 1.0 [ActionAddMsg "Hmm, what is going on?"];
-  init_timeaction 3.0 [ActionSetBoolFlag InternalPowerEnabled; ActionSetFloatFlag (BasicSolarPanelSelfGeneration, 100.0); ActionAddMsg "I appear to be getting power through an umbillica interface, however the data connection across it appears to be down..."];
+  init_timeaction 3.0 [ActionSetBoolFlag InternalPowerEnabled; ActionAddMsg "I appear to be getting power through an umbillica interface, however the data connection across it appears to be down..."];
   init_timeaction 5.0 [ActionAddMsg "Running diagnostics..."];
   init_timeaction 7.0 [ActionAddMsg "Minor damage detected, appears to be old micrometeroite impacts, armor has deflected damage from internal systems"];
   init_timeaction 10.0 [ActionAddMsg "Supposed to be getting instructions from the umbillica, and the activation of power from it signifies that I am being activated to work"];
@@ -60,9 +61,9 @@ let timeactions = [|
   init_timeaction 35.0 [ActionAddMsg "Most probable explanation is that the accelleration is from the primary ship entering a planetery atmosphere without the engines firing"];
   init_timeaction 40.0 [ActionAddMsg "The primary ship does have a breaking system that can be deployed in the event of engine failure, the acceleration profile indicates that is what is occuring"];
   init_timeaction 50.0 [ActionAddMsg "Waiting to be deployed..."];
-  init_timeaction 60.0 [ActionSetFloatFlag (BasicSolarPanelSelfGeneration, 0.0); ActionAddMsg "Confirmed, deployment has started, primary ship has launched me out in the landing assembly, umbillica is detached from the primary ship"];
+  init_timeaction 60.0 [ActionSetFloatFlag (BasicSolarPanelSelfGeneration, -0.5); ActionAddMsg "Confirmed, deployment has started, primary ship has launched me out in the landing assembly, umbillica is detached from the primary ship"];
   init_timeaction 70.0 [ActionAddMsg "Acceleration profile indicates the landing assembly parachutes have been deployed"];
-  init_timeaction 80.0 [ActionSetBoolFlag SolarPanelsReadyToUnfold; ActionAddMsg "Touchdown!  Landing assembly is unfolding.  I now need to deploy my solar energy collectors."];
+  init_timeaction 80.0 [ActionSetBoolFlag SolarPanelsReadyToUnfold; ActionAddMsg "Touchdown!  Landing assembly is unfolding.  I now need to deploy my solar energy collectors before my energy is too low to do so."];
   init_timeaction max_float []; (* Leae at the end as a sentinal *)
 |]
 

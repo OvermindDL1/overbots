@@ -24,10 +24,12 @@ let view_resources_category_resource model (rid, name, id) =
   let module R = (val r) in
   if not (R.shown model) then [] else
   let value = format_value (Overbots_resource.get_resource_value rid model) in
+  let delta = format_value (ResourceMap.find rid model.cache.resource_deltas) in
   [ div
       [ class' ("resource resource-"^id) ]
       [ div [ class' "resource-name" ] [ text name ]
       ; div [ class' "resource-value" ] [ text value ]
+      ; div [ class' "resource-delta" ] [ text delta; text "/s" ]
       ]
   ]
 
@@ -69,7 +71,7 @@ let view_scanner _model = []
 
 
 let view_msg _model = function
-  | TimeMsg (at, msg) -> div [ class' "msg" ] [text (at |> int_of_float |> string_of_int); text ": "; text msg]
+  | TimeMsg (at, msg) -> div [ class' "msg" ] [text ((0.5 +. at) |> int_of_float |> string_of_int); text ": "; text msg]
 
 let view_msgs model =
   List.map (view_msg model) model.msgs

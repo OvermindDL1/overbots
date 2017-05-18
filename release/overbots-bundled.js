@@ -1185,6 +1185,36 @@ function fold_left2(f, _accu, _l1, _l2) {
   }
 }
 
+function find_all(p) {
+  return function (param) {
+    var _accu = /* [] */0;
+    var _param = param;
+    while(true) {
+      var param$1 = _param;
+      var accu = _accu;
+      if (param$1) {
+        var l = param$1[1];
+        var x = param$1[0];
+        if (_1(p, x)) {
+          _param = l;
+          _accu = /* :: */[
+            x,
+            accu
+          ];
+          continue ;
+          
+        } else {
+          _param = l;
+          continue ;
+          
+        }
+      } else {
+        return rev_append(accu, /* [] */0);
+      }
+    }
+  };
+}
+
 function chop(_k, _l) {
   while(true) {
     var l = _l;
@@ -1747,6 +1777,8 @@ function sort_uniq(cmp, l) {
     return sort(len, l);
   }
 }
+
+var filter = find_all;
 
 
 /* No side effect */
@@ -4813,6 +4845,17 @@ function resource_folder(rid, _, acc) {
 
 var init_resources_values = _3(ResourceMap[/* fold */10], resource_folder, all_resources, ResourceMap[/* empty */0]);
 
+var init_cache = /* record */[
+  /* transformers : [] */0,
+  /* resource_deltas */init_resources_values
+];
+
+function reset_cache(model) {
+  var newrecord = model.slice();
+  newrecord[/* cache */8] = init_cache;
+  return newrecord;
+}
+
 var displayed_resources = /* :: */[
   /* tuple */[
     "",
@@ -4894,7 +4937,7 @@ function perform_action(model, param) {
 }
 
 function perform_actions(model, actions) {
-  return fold_left(perform_action, model, actions);
+  return reset_cache(fold_left(perform_action, model, actions));
 }
 
 var timeactions = /* array */[
@@ -4905,7 +4948,13 @@ var timeactions = /* array */[
           /* Energy */0,
           100.0
         ]),
-      /* [] */0
+      /* :: */[
+        /* ActionSetFloatFlag */__(6, [
+            /* BasicSolarPanelSelfGeneration */0,
+            100.0
+          ]),
+        /* [] */0
+      ]
     ]
   ],
   /* record */[
@@ -4920,14 +4969,8 @@ var timeactions = /* array */[
     /* actions : :: */[
       /* ActionSetBoolFlag */__(2, [/* InternalPowerEnabled */0]),
       /* :: */[
-        /* ActionSetFloatFlag */__(6, [
-            /* BasicSolarPanelSelfGeneration */0,
-            100.0
-          ]),
-        /* :: */[
-          /* ActionAddMsg */__(0, ["I appear to be getting power through an umbillica interface, however the data connection across it appears to be down..."]),
-          /* [] */0
-        ]
+        /* ActionAddMsg */__(0, ["I appear to be getting power through an umbillica interface, however the data connection across it appears to be down..."]),
+        /* [] */0
       ]
     ]
   ],
@@ -5013,7 +5056,7 @@ var timeactions = /* array */[
     /* actions : :: */[
       /* ActionSetFloatFlag */__(6, [
           /* BasicSolarPanelSelfGeneration */0,
-          0.0
+          -0.5
         ]),
       /* :: */[
         /* ActionAddMsg */__(0, ["Confirmed, deployment has started, primary ship has launched me out in the landing assembly, umbillica is detached from the primary ship"]),
@@ -5033,7 +5076,7 @@ var timeactions = /* array */[
     /* actions : :: */[
       /* ActionSetBoolFlag */__(2, [/* SolarPanelsReadyToUnfold */1]),
       /* :: */[
-        /* ActionAddMsg */__(0, ["Touchdown!  Landing assembly is unfolding.  I now need to deploy my solar energy collectors."]),
+        /* ActionAddMsg */__(0, ["Touchdown!  Landing assembly is unfolding.  I now need to deploy my solar energy collectors before my energy is too low to do so."]),
         /* [] */0
       ]
     ]
@@ -5053,7 +5096,7 @@ function update_timeactions(model, time) {
             none
           ];
   } else {
-    var model$1 = fold_left(perform_action, model, match[/* actions */1]);
+    var model$1 = perform_actions(model, match[/* actions */1]);
     var model$2 = int_flag_add(/* TimeActionIdx */0, 1, model$1);
     return /* tuple */[
             model$2,
@@ -5071,7 +5114,7 @@ function button_cost(_, param) {
     return /* :: */[
             /* tuple */[
               /* Energy */0,
-              50.0
+              25.0
             ],
             /* [] */0
           ];
@@ -5079,7 +5122,7 @@ function button_cost(_, param) {
     return /* :: */[
             /* tuple */[
               /* Energy */0,
-              100.0
+              50.0
             ],
             /* [] */0
           ];
@@ -5100,11 +5143,11 @@ function button_enabled(model, param) {
   }
 }
 
-function button_temporarily_disabled(model, _button) {
-  if (_button !== 0) {
+function button_temporarily_disabled(model, button) {
+  if (button !== 0) {
     return +(cost_resources(button_cost(model, /* DeployDrill */1), model) === /* None */0);
   } else {
-    return /* false */0;
+    return +(cost_resources(button_cost(model, button), model) === /* None */0);
   }
 }
 
@@ -5113,18 +5156,24 @@ function button_actions(_, param) {
     return /* :: */[
             /* ActionSetBoolFlag */__(2, [/* DrillDeployed */3]),
             /* :: */[
-              /* ActionAddMsg */__(0, ["Now that I've started acquiring resources I need to active my internal refineries to prepare the resources for use"]),
+              /* ActionAddMsg */__(0, ["Now that I've started acquiring resources I need to activate my internal refineries to prepare the resources for use"]),
               /* [] */0
             ]
           ];
   } else {
     return /* :: */[
-            /* ActionSetBoolFlag */__(2, [/* SolarPanelsGenerating */2]),
+            /* ActionSetFloatFlag */__(6, [
+                /* BasicSolarPanelSelfGeneration */0,
+                1.0
+              ]),
             /* :: */[
-              /* ActionClearBoolFlag */__(3, [/* SolarPanelsReadyToUnfold */1]),
+              /* ActionSetBoolFlag */__(2, [/* SolarPanelsGenerating */2]),
               /* :: */[
-                /* ActionAddMsg */__(0, ["Energy is now being generated, now to acquire simple minerals by drilling"]),
-                /* [] */0
+                /* ActionClearBoolFlag */__(3, [/* SolarPanelsReadyToUnfold */1]),
+                /* :: */[
+                  /* ActionAddMsg */__(0, ["Energy is now being generated, now to acquire simple minerals by drilling"]),
+                  /* [] */0
+                ]
               ]
             ]
           ];
@@ -5223,6 +5272,7 @@ function view_resources_category_resource(model, param) {
   var r = get_resource_module(rid);
   if (_1(r[/* shown */1], model)) {
     var value$$1 = format_value(get_resource_value(rid, model));
+    var delta = format_value(_2(ResourceMap[/* find */21], rid, model[/* cache */8][/* resource_deltas */1]));
     return /* :: */[
             div$2(/* None */0, /* None */0, /* :: */[
                   class$prime("resource resource-" + param[2]),
@@ -5243,7 +5293,19 @@ function view_resources_category_resource(model, param) {
                           text$1(value$$1),
                           /* [] */0
                         ]),
-                    /* [] */0
+                    /* :: */[
+                      div$2(/* None */0, /* None */0, /* :: */[
+                            class$prime("resource-delta"),
+                            /* [] */0
+                          ], /* :: */[
+                            text$1(delta),
+                            /* :: */[
+                              text$1("/s"),
+                              /* [] */0
+                            ]
+                          ]),
+                      /* [] */0
+                    ]
                   ]
                 ]),
             /* [] */0
@@ -5350,7 +5412,7 @@ function view_msg(_, param) {
               class$prime("msg"),
               /* [] */0
             ], /* :: */[
-              text$1(string_of_int(param[0] | 0)),
+              text$1(string_of_int(0.5 + param[0] | 0)),
               /* :: */[
                 text$1(": "),
                 /* :: */[
@@ -5402,20 +5464,213 @@ function view(model) {
 }
 
 
-/* Overbots_buttons Not a pure module */
+/* Overbots_types Not a pure module */
+
+// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+function name$1() {
+  return "Sunlight";
+}
+
+function enabled() {
+  return /* true */1;
+}
+
+function transformers(model) {
+  return /* :: */[
+          /* Generate */__(0, [
+              /* Energy */0,
+              float_flag_value(/* BasicSolarPanelSelfGeneration */0, model)
+            ]),
+          /* [] */0
+        ];
+}
+
+var BaseSolarGeneration = /* module */[
+  /* name */name$1,
+  /* enabled */enabled,
+  /* transformers */transformers
+];
+
+function name$1$1() {
+  return "Internal Drilling";
+}
+
+function enabled$1(model) {
+  return bool_flag_exists(/* DrillDeployed */3, model);
+}
+
+function transformers$1() {
+  return /* :: */[
+          /* Consume */__(1, [
+              /* Energy */0,
+              0.5
+            ]),
+          /* :: */[
+            /* Generate */__(0, [
+                /* IronOxide */1,
+                0.2
+              ]),
+            /* :: */[
+              /* Generate */__(0, [
+                  /* RawSilicon */2,
+                  0.1
+                ]),
+              /* [] */0
+            ]
+          ]
+        ];
+}
+
+var DrillEnabled = /* module */[
+  /* name */name$1$1,
+  /* enabled */enabled$1,
+  /* transformers */transformers$1
+];
+
+var all_transformers_001 = /* :: */[
+  DrillEnabled,
+  /* [] */0
+];
+
+var all_transformers = /* :: */[
+  BaseSolarGeneration,
+  all_transformers_001
+];
+
+function enabled_transformers(model) {
+  return filter(function (T) {
+                return _1(T[/* enabled */1], model);
+              })(all_transformers);
+}
+
+function transformer_delta(param) {
+  if (param.tag) {
+    return /* tuple */[
+            param[0],
+            -param[1]
+          ];
+  } else {
+    return /* tuple */[
+            param[0],
+            param[1]
+          ];
+  }
+}
+
+function calculate_resource_delta(model, map$$1, T) {
+  return fold_left(function (map$$1, transformation) {
+              var match = transformer_delta(transformation);
+              var rid = match[0];
+              var delta = match[1] + _2(ResourceMap[/* find */21], rid, map$$1);
+              return _3(ResourceMap[/* add */3], rid, delta, map$$1);
+            }, map$$1, _1(T[/* transformers */2], model));
+}
+
+function calculate_resource_deltas(model, transformers) {
+  return fold_left(function (param, param$1) {
+              return calculate_resource_delta(model, param, param$1);
+            }, init_resources_values, transformers);
+}
+
+function calculate_delta_to_next_filled(model, resource_deltas) {
+  return _3(ResourceMap[/* fold */10], function (rid, delta, old_time) {
+              if (delta === 0.0) {
+                return old_time;
+              } else {
+                var value = _2(ResourceMap[/* find */21], rid, model[/* resource_values */4]);
+                var R = get_resource_module(rid);
+                var match = _1(R[/* get_value_range */2], model);
+                var at_time = delta > 0.0 ? (match[1] - value) / delta : (value - match[0]) / delta;
+                if (at_time > 0.0 && at_time < old_time) {
+                  return at_time;
+                } else {
+                  return old_time;
+                }
+              }
+            }, resource_deltas, max_float);
+}
+
+function apply_resource_deltas(model, resource_deltas, cur_time) {
+  var time_delta = cur_time - model[/* gametime */2];
+  return _3(ResourceMap[/* fold */10], function (rid, delta, model) {
+              var delta$1 = delta * time_delta;
+              var match = add_resource_value(rid, delta$1, model);
+              if (typeof match === "number") {
+                return model;
+              } else {
+                return match[0];
+              }
+            }, resource_deltas, model);
+}
+
+function update_transformations(_model, new_time) {
+  while(true) {
+    var model = _model;
+    var match;
+    if (model[/* cache */8][/* transformers */0]) {
+      match = /* tuple */[
+        model[/* cache */8][/* transformers */0],
+        model[/* cache */8][/* resource_deltas */1]
+      ];
+    } else {
+      var transformers = enabled_transformers(model);
+      match = /* tuple */[
+        transformers,
+        calculate_resource_deltas(model, transformers)
+      ];
+    }
+    var resource_deltas = match[1];
+    var time_to_next_filled = model[/* gametime */2] + calculate_delta_to_next_filled(model, resource_deltas);
+    var time_slice = min(time_to_next_filled, new_time);
+    var model$1 = apply_resource_deltas(model, resource_deltas, time_slice);
+    if (time_slice >= new_time) {
+      var cache_000 = /* transformers */match[0];
+      var cache = /* record */[
+        cache_000,
+        /* resource_deltas */resource_deltas
+      ];
+      var newrecord = model$1.slice();
+      newrecord[/* gametime */2] = new_time;
+      newrecord[/* cache */8] = cache;
+      return /* tuple */[
+              newrecord,
+              none
+            ];
+    } else {
+      var gametime = new_time - time_slice;
+      var cache$1 = /* record */[
+        /* transformers : [] */0,
+        /* resource_deltas */init_resources_values
+      ];
+      var newrecord$1 = model$1.slice();
+      newrecord$1[/* gametime */2] = gametime;
+      newrecord$1[/* cache */8] = cache$1;
+      _model = newrecord$1;
+      continue ;
+      
+    }
+  }
+}
+
+
+/* Overbots_flags Not a pure module */
 
 // Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
 function update_state(model, new_time) {
   var time = new_time - model[/* start_realtime */0];
   var match = update_timeactions(model, time);
-  var newrecord = match[0].slice();
+  var match$1 = update_transformations(match[0], time);
+  var newrecord = match$1[0].slice();
   newrecord[/* current_realtime */1] = new_time;
   newrecord[/* gametime */2] = time;
   return /* tuple */[
           newrecord,
           batch(/* :: */[
                 match[1],
-                /* [] */0
+                /* :: */[
+                  match$1[1],
+                  /* [] */0
+                ]
               ])
         ];
 }
@@ -5478,7 +5733,8 @@ function init() {
     /* resource_values */init_resources_values,
     /* bool_flags */init_bool_flags,
     /* int_flags */init_int_flags,
-    /* float_flags */init_float_flags
+    /* float_flags */init_float_flags,
+    /* cache */init_cache
   ];
   return /* tuple */[
           model,
@@ -5499,7 +5755,8 @@ function update(model, param) {
         /* resource_values */model[/* resource_values */4],
         /* bool_flags */model[/* bool_flags */5],
         /* int_flags */model[/* int_flags */6],
-        /* float_flags */model[/* float_flags */7]
+        /* float_flags */model[/* float_flags */7],
+        /* cache */model[/* cache */8]
       ];
     return update_state(model$1, time);
   }

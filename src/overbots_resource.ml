@@ -95,3 +95,13 @@ let init_resources_values =
   let resource_folder rid _r acc =
     ResourceMap.add rid 0.0 acc in
   ResourceMap.fold resource_folder all_resources ResourceMap.empty
+
+
+let init_cache = {
+  transformers = [];
+  resource_deltas = init_resources_values;
+}
+
+let reset_cache model =
+  let cache = init_cache in
+  {model with cache}
