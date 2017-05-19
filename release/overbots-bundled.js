@@ -6233,7 +6233,7 @@ function update_transformations(_model, new_time) {
               none
             ];
     } else {
-      var gametime$$1 = new_time - time_slice;
+      var gametime$$1 = model$1[/* gametime */2] - time_slice;
       var cache$1 = /* record */[
         /* transformers : [] */0,
         /* resource_deltas */init_resources_values
