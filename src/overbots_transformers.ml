@@ -97,7 +97,7 @@ let rec update_transformations model new_time =
     let model = {model with gametime; cache} in
     (model, Tea.Cmd.none)
   else
-    let gametime = model.gametime -. time_slice in
+    let gametime = time_slice in
     let cache = {model.cache with transformers = []; resource_deltas = Overbots_resource.init_resources_values} in
     let model = {model with gametime; cache} in
     update_transformations model new_time
