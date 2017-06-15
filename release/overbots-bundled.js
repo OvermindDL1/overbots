@@ -129,29 +129,29 @@ function curry_1(o, a0, arity) {
       case 1 : 
           return o(a0);
       case 2 : 
-          return function (param) {
-            return o(a0, param);
-          };
+          return (function (param) {
+              return o(a0, param);
+            });
       case 3 : 
-          return function (param, param$1) {
-            return o(a0, param, param$1);
-          };
+          return (function (param, param$1) {
+              return o(a0, param, param$1);
+            });
       case 4 : 
-          return function (param, param$1, param$2) {
-            return o(a0, param, param$1, param$2);
-          };
+          return (function (param, param$1, param$2) {
+              return o(a0, param, param$1, param$2);
+            });
       case 5 : 
-          return function (param, param$1, param$2, param$3) {
-            return o(a0, param, param$1, param$2, param$3);
-          };
+          return (function (param, param$1, param$2, param$3) {
+              return o(a0, param, param$1, param$2, param$3);
+            });
       case 6 : 
-          return function (param, param$1, param$2, param$3, param$4) {
-            return o(a0, param, param$1, param$2, param$3, param$4);
-          };
+          return (function (param, param$1, param$2, param$3, param$4) {
+              return o(a0, param, param$1, param$2, param$3, param$4);
+            });
       case 7 : 
-          return function (param, param$1, param$2, param$3, param$4, param$5) {
-            return o(a0, param, param$1, param$2, param$3, param$4, param$5);
-          };
+          return (function (param, param$1, param$2, param$3, param$4, param$5) {
+              return o(a0, param, param$1, param$2, param$3, param$4, param$5);
+            });
       
     }
   }
@@ -180,25 +180,25 @@ function curry_2(o, a0, a1, arity) {
       case 2 : 
           return o(a0, a1);
       case 3 : 
-          return function (param) {
-            return o(a0, a1, param);
-          };
+          return (function (param) {
+              return o(a0, a1, param);
+            });
       case 4 : 
-          return function (param, param$1) {
-            return o(a0, a1, param, param$1);
-          };
+          return (function (param, param$1) {
+              return o(a0, a1, param, param$1);
+            });
       case 5 : 
-          return function (param, param$1, param$2) {
-            return o(a0, a1, param, param$1, param$2);
-          };
+          return (function (param, param$1, param$2) {
+              return o(a0, a1, param, param$1, param$2);
+            });
       case 6 : 
-          return function (param, param$1, param$2, param$3) {
-            return o(a0, a1, param, param$1, param$2, param$3);
-          };
+          return (function (param, param$1, param$2, param$3) {
+              return o(a0, a1, param, param$1, param$2, param$3);
+            });
       case 7 : 
-          return function (param, param$1, param$2, param$3, param$4) {
-            return o(a0, a1, param, param$1, param$2, param$3, param$4);
-          };
+          return (function (param, param$1, param$2, param$3, param$4) {
+              return o(a0, a1, param, param$1, param$2, param$3, param$4);
+            });
       
     }
   }
@@ -232,21 +232,21 @@ function curry_3(o, a0, a1, a2, arity) {
       case 3 : 
           return o(a0, a1, a2);
       case 4 : 
-          return function (param) {
-            return o(a0, a1, a2, param);
-          };
+          return (function (param) {
+              return o(a0, a1, a2, param);
+            });
       case 5 : 
-          return function (param, param$1) {
-            return o(a0, a1, a2, param, param$1);
-          };
+          return (function (param, param$1) {
+              return o(a0, a1, a2, param, param$1);
+            });
       case 6 : 
-          return function (param, param$1, param$2) {
-            return o(a0, a1, a2, param, param$1, param$2);
-          };
+          return (function (param, param$1, param$2) {
+              return o(a0, a1, a2, param, param$1, param$2);
+            });
       case 7 : 
-          return function (param, param$1, param$2, param$3) {
-            return o(a0, a1, a2, param, param$1, param$2, param$3);
-          };
+          return (function (param, param$1, param$2, param$3) {
+              return o(a0, a1, a2, param, param$1, param$2, param$3);
+            });
       
     }
   }
@@ -293,17 +293,17 @@ function curry_4(o, a0, a1, a2, a3, arity) {
       case 4 : 
           return o(a0, a1, a2, a3);
       case 5 : 
-          return function (param) {
-            return o(a0, a1, a2, a3, param);
-          };
+          return (function (param) {
+              return o(a0, a1, a2, a3, param);
+            });
       case 6 : 
-          return function (param, param$1) {
-            return o(a0, a1, a2, a3, param, param$1);
-          };
+          return (function (param, param$1) {
+              return o(a0, a1, a2, a3, param, param$1);
+            });
       case 7 : 
-          return function (param, param$1, param$2) {
-            return o(a0, a1, a2, a3, param, param$1, param$2);
-          };
+          return (function (param, param$1, param$2) {
+              return o(a0, a1, a2, a3, param, param$1, param$2);
+            });
       
     }
   }
@@ -358,13 +358,13 @@ function curry_5(o, a0, a1, a2, a3, a4, arity) {
       case 5 : 
           return o(a0, a1, a2, a3, a4);
       case 6 : 
-          return function (param) {
-            return o(a0, a1, a2, a3, a4, param);
-          };
+          return (function (param) {
+              return o(a0, a1, a2, a3, a4, param);
+            });
       case 7 : 
-          return function (param, param$1) {
-            return o(a0, a1, a2, a3, a4, param, param$1);
-          };
+          return (function (param, param$1) {
+              return o(a0, a1, a2, a3, a4, param, param$1);
+            });
       
     }
   }
@@ -428,9 +428,9 @@ function curry_6(o, a0, a1, a2, a3, a4, a5, arity) {
       case 6 : 
           return o(a0, a1, a2, a3, a4, a5);
       case 7 : 
-          return function (param) {
-            return o(a0, a1, a2, a3, a4, a5, param);
-          };
+          return (function (param) {
+              return o(a0, a1, a2, a3, a4, a5, param);
+            });
       
     }
   }
@@ -613,107 +613,6 @@ function _8(o, a0, a1, a2, a3, a4, a5, a6, a7) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
-function setItem$1($$window, key, value) {
-  var match = $$window.localStorage;
-  if (match !== undefined) {
-    return match.setItem(key, value);
-  } else {
-    return /* () */0;
-  }
-}
-
-function getItem$1($$window, key) {
-  var match = $$window.localStorage;
-  if (match !== undefined) {
-    var res = match.getItem(key);
-    if (res === "") {
-      return /* None */0;
-    } else {
-      return /* Some */[res];
-    }
-  } else {
-    return /* None */0;
-  }
-}
-
-
-/* No side effect */
-
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
-function getItem$$1(key) {
-  return /* Task */[function (cb) {
-            var match = getItem$1(window, key);
-            if (match) {
-              return _1(cb, /* Ok */__(0, [match[0]]));
-            } else {
-              return _1(cb, /* Error */__(1, ["Key not found"]));
-            }
-          }];
-}
-
-function setItem$$1(key, value) {
-  return /* Task */[function (cb) {
-            setItem$1(window, key, value);
-            return _1(cb, /* Ok */__(0, [/* () */0]));
-          }];
-}
-
-var LocalStorage = /* module */[
-  /* getItem */getItem$$1,
-  /* setItem */setItem$$1
-];
-
-
-/* No side effect */
-
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
-function polyfills() {
-  ((
-  // remove polyfill
-  (function() {
-    if (!('remove' in Element.prototype)) {
-      Element.prototype.remove = function() {
-        if (this.parentNode) {
-          this.parentNode.removeChild(this);
-        }
-      };
-    }
-  }())
-  ));
-  ((
-  // requestAnimationFrame polyfill
-  (function() {
-      var lastTime = 0;
-      var vendors = ['ms', 'moz', 'webkit', 'o'];
-      for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-          window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-          window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                     || window[vendors[x]+'CancelRequestAnimationFrame'];
-      }
-
-      if (!window.requestAnimationFrame)
-          window.requestAnimationFrame = function(callback, element) {
-              var currTime = new Date().getTime();
-              var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-              var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-                timeToCall);
-              lastTime = currTime + timeToCall;
-              return id;
-          };
-
-      if (!window.cancelAnimationFrame)
-          window.cancelAnimationFrame = function(id) {
-              clearTimeout(id);
-          };
-  }())
-  ));
-  return /* () */0;
-}
-
-
-/* No side effect */
-
 function caml_int_compare(x, y) {
   if (x < y) {
     return -1;
@@ -751,7 +650,7 @@ function caml_compare(_a, _b) {
         }
       } else if (is_b_number !== 0) {
         return 1;
-      } else if (a_type === "boolean" || a_type === "null" || a_type === "undefined") {
+      } else if (a_type === "boolean" || a_type === "undefined" || a === null) {
         var x$1 = a;
         var y$1 = b;
         if (x$1 === y$1) {
@@ -868,7 +767,7 @@ function caml_equal(_a, _b) {
       return /* true */1;
     } else {
       var a_type = typeof a;
-      if (a_type === "string" || a_type === "number" || a_type === "boolean" || a_type === "undefined" || a_type === "null") {
+      if (a_type === "string" || a_type === "number" || a_type === "boolean" || a_type === "undefined" || a === null) {
         return /* false */0;
       } else {
         var b_type = typeof b;
@@ -877,7 +776,7 @@ function caml_equal(_a, _b) {
                 invalid_argument,
                 "equal: functional value"
               ];
-        } else if (b_type === "number" || b_type === "null" || b_type === "undefined") {
+        } else if (b_type === "number" || b_type === "undefined" || b === null) {
           return /* false */0;
         } else {
           var tag_a = a.tag | 0;
@@ -1266,10 +1165,10 @@ function caml_format_float(fmt, x) {
               p = p - (exp + 1 | 0) | 0;
               s = x$1.toFixed(p);
             } else {
-              while(function () {
-                    s = x$1.toFixed(p);
-                    return +(s.length > (prec$1 + 1 | 0));
-                  }()) {
+              while((function () {
+                      s = x$1.toFixed(p);
+                      return +(s.length > (prec$1 + 1 | 0));
+                    })()) {
                 p = p - 1 | 0;
               }
             }
@@ -1533,7 +1432,231 @@ var max_float = Number.MAX_VALUE;
 
 /* No side effect */
 
-function length(l) {
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
+function attemptOpt(resultToOptionalMessage, param) {
+  var task = param[0];
+  return /* EnqueueCall */__(2, [(function (callbacks) {
+                return _1(task, (function (value) {
+                              var match = _1(resultToOptionalMessage, value);
+                              if (match) {
+                                return _1(callbacks[0][/* enqueue */0], match[0]);
+                              } else {
+                                return /* () */0;
+                              }
+                            }));
+              })]);
+}
+
+
+/* No side effect */
+
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
+function length$1($$window) {
+  var match = $$window.localStorage;
+  if (match !== undefined) {
+    return /* Some */[match.length];
+  } else {
+    return /* None */0;
+  }
+}
+
+function clear$1($$window) {
+  var match = $$window.localStorage;
+  if (match !== undefined) {
+    return /* Some */[match.clear()];
+  } else {
+    return /* None */0;
+  }
+}
+
+function key$1($$window, idx) {
+  var match = $$window.localStorage;
+  if (match !== undefined) {
+    return /* Some */[match.key(idx)];
+  } else {
+    return /* None */0;
+  }
+}
+
+function getItem$1($$window, key) {
+  var match = $$window.localStorage;
+  if (match !== undefined) {
+    try {
+      return /* Some */[match.getItem(key)];
+    }
+    catch (exn){
+      return /* None */0;
+    }
+  } else {
+    return /* None */0;
+  }
+}
+
+function removeItem$1($$window, key) {
+  var match = $$window.localStorage;
+  if (match !== undefined) {
+    return /* Some */[match.removeItem(key)];
+  } else {
+    return /* None */0;
+  }
+}
+
+function setItem$1($$window, key, value) {
+  var match = $$window.localStorage;
+  if (match !== undefined) {
+    return /* Some */[match.setItem(key, value)];
+  } else {
+    return /* None */0;
+  }
+}
+
+
+/* No side effect */
+
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
+var length$$1 = /* Task */[(function (cb) {
+      var match = length$1(window);
+      if (match) {
+        return _1(cb, /* Ok */__(0, [match[0]]));
+      } else {
+        return _1(cb, /* Error */__(1, ["localStorage is not available"]));
+      }
+    })];
+
+var clear$$1 = /* Task */[(function (cb) {
+      var match = clear$1(window);
+      if (match) {
+        return _1(cb, /* Ok */__(0, [match[0]]));
+      } else {
+        return _1(cb, /* Error */__(1, ["localStorage is not available"]));
+      }
+    })];
+
+function clearCmd() {
+  return attemptOpt((function () {
+                return /* None */0;
+              }), clear$$1);
+}
+
+function key$$1(idx) {
+  return /* Task */[(function (cb) {
+              var match = key$1(window, idx);
+              if (match) {
+                return _1(cb, /* Ok */__(0, [match[0]]));
+              } else {
+                return _1(cb, /* Error */__(1, ["localStorage is not available"]));
+              }
+            })];
+}
+
+function getItem$$1(key$$1) {
+  return /* Task */[(function (cb) {
+              var match = getItem$1(window, key$$1);
+              if (match) {
+                return _1(cb, /* Ok */__(0, [match[0]]));
+              } else {
+                return _1(cb, /* Error */__(1, ["localStorage is not available"]));
+              }
+            })];
+}
+
+function removeItem$$1(key$$1) {
+  return /* Task */[(function (cb) {
+              var match = removeItem$1(window, key$$1);
+              if (match) {
+                return _1(cb, /* Ok */__(0, [match[0]]));
+              } else {
+                return _1(cb, /* Error */__(1, ["localStorage is not available"]));
+              }
+            })];
+}
+
+function removeItemCmd(key$$1) {
+  return attemptOpt((function () {
+                return /* None */0;
+              }), removeItem$$1(key$$1));
+}
+
+function setItem$$1(key$$1, value) {
+  return /* Task */[(function (cb) {
+              var match = setItem$1(window, key$$1, value);
+              if (match) {
+                return _1(cb, /* Ok */__(0, [/* () */0]));
+              } else {
+                return _1(cb, /* Error */__(1, ["localStorage is not available"]));
+              }
+            })];
+}
+
+function setItemCmd(key$$1, value) {
+  return attemptOpt((function () {
+                return /* None */0;
+              }), setItem$$1(key$$1, value));
+}
+
+var LocalStorage = /* module */[
+  /* length */length$$1,
+  /* clear */clear$$1,
+  /* clearCmd */clearCmd,
+  /* key */key$$1,
+  /* getItem */getItem$$1,
+  /* removeItem */removeItem$$1,
+  /* removeItemCmd */removeItemCmd,
+  /* setItem */setItem$$1,
+  /* setItemCmd */setItemCmd
+];
+
+
+/* No side effect */
+
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
+function polyfills() {
+  ((
+  // remove polyfill
+  (function() {
+    if (!('remove' in Element.prototype)) {
+      Element.prototype.remove = function() {
+        if (this.parentNode) {
+          this.parentNode.removeChild(this);
+        }
+      };
+    }
+  }())
+  ));
+  ((
+  // requestAnimationFrame polyfill
+  (function() {
+      var lastTime = 0;
+      var vendors = ['ms', 'moz', 'webkit', 'o'];
+      for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+          window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+          window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                     || window[vendors[x]+'CancelRequestAnimationFrame'];
+      }
+
+      if (!window.requestAnimationFrame)
+          window.requestAnimationFrame = function(callback, element) {
+              var currTime = new Date().getTime();
+              var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+              var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                timeToCall);
+              lastTime = currTime + timeToCall;
+              return id;
+          };
+
+      if (!window.cancelAnimationFrame)
+          window.cancelAnimationFrame = function(id) {
+              clearTimeout(id);
+          };
+  }())
+  ));
+  return /* () */0;
+}
+
+
+/* No side effect */
+
+function length$2(l) {
   var _len = 0;
   var _param = l;
   while(true) {
@@ -1580,12 +1703,12 @@ function flatten(param) {
   }
 }
 
-function map$1(f, param) {
+function map$2(f, param) {
   if (param) {
     var r = _1(f, param[0]);
     return /* :: */[
             r,
-            map$1(f, param[1])
+            map$2(f, param[1])
           ];
   } else {
     return /* [] */0;
@@ -1659,33 +1782,33 @@ function fold_left2(f, _accu, _l1, _l2) {
 }
 
 function find_all(p) {
-  return function (param) {
-    var _accu = /* [] */0;
-    var _param = param;
-    while(true) {
-      var param$1 = _param;
-      var accu = _accu;
-      if (param$1) {
-        var l = param$1[1];
-        var x = param$1[0];
-        if (_1(p, x)) {
-          _param = l;
-          _accu = /* :: */[
-            x,
-            accu
-          ];
-          continue ;
-          
+  return (function (param) {
+      var _accu = /* [] */0;
+      var _param = param;
+      while(true) {
+        var param$1 = _param;
+        var accu = _accu;
+        if (param$1) {
+          var l = param$1[1];
+          var x = param$1[0];
+          if (_1(p, x)) {
+            _param = l;
+            _accu = /* :: */[
+              x,
+              accu
+            ];
+            continue ;
+            
+          } else {
+            _param = l;
+            continue ;
+            
+          }
         } else {
-          _param = l;
-          continue ;
-          
+          return rev_append(accu, /* [] */0);
         }
-      } else {
-        return rev_append(accu, /* [] */0);
       }
-    }
-  };
+    });
 }
 
 function chop(_k, _l) {
@@ -2243,7 +2366,7 @@ function sort_uniq(cmp, l) {
     }
     
   };
-  var len = length(l);
+  var len = length$2(l);
   if (len < 2) {
     return l;
   } else {
@@ -2293,7 +2416,7 @@ var compare$1 = caml_string_compare;
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function setStyle(n, key, value) {
   n.style[key] = value;
   return /* () */0;
@@ -2341,7 +2464,7 @@ function removeEventListener(n, typ, listener, options) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function createElementNsOptional(namespace, tagName) {
   if (namespace === "") {
     return document.createElement(tagName);
@@ -2353,7 +2476,7 @@ function createElementNsOptional(namespace, tagName) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 var noNode = /* CommentNode */__(0, [""]);
 
 function fullnode(namespace, tagName, key, unique, props, vdoms) {
@@ -2376,22 +2499,22 @@ function onMsg(name, msg) {
 }
 
 function eventHandler(callbacks, cb) {
-  return function (ev) {
-    var match = _1(cb[0], ev);
-    if (match) {
-      return _1(callbacks[0][/* enqueue */0], match[0]);
-    } else {
-      return /* () */0;
-    }
-  };
+  return (function (ev) {
+      var match = _1(cb[0], ev);
+      if (match) {
+        return _1(callbacks[0][/* enqueue */0], match[0]);
+      } else {
+        return /* () */0;
+      }
+    });
 }
 
 function eventHandler_GetCB(param) {
   if (param.tag) {
     var msg = param[0];
-    return function () {
-      return /* Some */[msg];
-    };
+    return (function () {
+        return /* Some */[msg];
+      });
   } else {
     return param[1];
   }
@@ -2477,9 +2600,9 @@ function patchVNodesOnElems_PropertiesApply_Add(callbacks, elem, _, param) {
           param[2][0] = eventHandler_Register(callbacks, elem, param[0], param[1]);
           return /* () */0;
       case 4 : 
-          return fold_left(function (_, param) {
-                      return setStyleProperty(elem, /* None */0, param[0], param[1]);
-                    }, /* () */0, param[0]);
+          return fold_left((function (_, param) {
+                        return setStyleProperty(elem, /* None */0, param[0], param[1]);
+                      }), /* () */0, param[0]);
       
     }
   }
@@ -2510,9 +2633,9 @@ function patchVNodesOnElems_PropertiesApply_Remove(_, elem, _$1, param) {
           cache[0] = eventHandler_Unregister(elem, param[0], cache[0]);
           return /* () */0;
       case 4 : 
-          return fold_left(function (_, param) {
-                      return setStyleProperty(elem, /* None */0, param[0], null);
-                    }, /* () */0, param[0]);
+          return fold_left((function (_, param) {
+                        return setStyleProperty(elem, /* None */0, param[0], null);
+                      }), /* () */0, param[0]);
       
     }
   }
@@ -2559,21 +2682,21 @@ function patchVNodesOnElems_PropertiesApply_Mutate(_, elem, _$1, oldProp, _newPr
                   "Passed a non-Style to a new Style as a Mutations while the old Style is not actually a style!"
                 ];
           } else if (oldProp.tag === 4) {
-            return fold_left2(function (_, param, param$1) {
-                        var nv = param$1[1];
-                        var nk = param$1[0];
-                        var ok = param[0];
-                        if (ok === nk) {
-                          if (param[1] === nv) {
-                            return /* () */0;
+            return fold_left2((function (_, param, param$1) {
+                          var nv = param$1[1];
+                          var nk = param$1[0];
+                          var ok = param[0];
+                          if (ok === nk) {
+                            if (param[1] === nv) {
+                              return /* () */0;
+                            } else {
+                              return setStyleProperty(elem, /* None */0, nk, nv);
+                            }
                           } else {
+                            setStyleProperty(elem, /* None */0, ok, null);
                             return setStyleProperty(elem, /* None */0, nk, nv);
                           }
-                        } else {
-                          setStyleProperty(elem, /* None */0, ok, null);
-                          return setStyleProperty(elem, /* None */0, nk, nv);
-                        }
-                      }, /* () */0, oldProp[0], _newProp[0]);
+                        }), /* () */0, oldProp[0], _newProp[0]);
           } else {
             throw [
                   failure,
@@ -2722,9 +2845,9 @@ function patchVNodesOnElems_ReplaceNode(callbacks, elem, elems, idx, param) {
     var newProperties = param[4];
     var oldChild = caml_array_get(elems, idx);
     var newChild = createElementNsOptional(param[0], param[1]);
-    var match = patchVNodesOnElems_Properties(callbacks, newChild, map$1(function () {
-              return /* NoProp */0;
-            }, newProperties), newProperties);
+    var match = patchVNodesOnElems_Properties(callbacks, newChild, map$2((function () {
+                return /* NoProp */0;
+              }), newProperties), newProperties);
     if (match !== 0) {
       var childChildren = newChild.childNodes;
       patchVNodesOnElems(callbacks, newChild, childChildren, 0, /* [] */0, param[5]);
@@ -2735,7 +2858,7 @@ function patchVNodesOnElems_ReplaceNode(callbacks, elem, elems, idx, param) {
       throw [
             match_failure,
             [
-              "/home/overminddl1/ocaml/tmp/overbots/node_modules/bucklescript-tea/src/vdom.ml",
+              "C:\\Users\\robertsong\\Projects\\tmp\\overbots\\node_modules\\bucklescript-tea\\src\\vdom.ml",
               316,
               30
             ]
@@ -2763,9 +2886,9 @@ function patchVNodesOnElems_CreateElement(_callbacks, _param) {
       case 2 : 
           var newProperties = param[4];
           var newChild = createElementNsOptional(param[0], param[1]);
-          var match = patchVNodesOnElems_Properties(callbacks, newChild, map$1(function () {
-                    return /* NoProp */0;
-                  }, newProperties), newProperties);
+          var match = patchVNodesOnElems_Properties(callbacks, newChild, map$2((function () {
+                      return /* NoProp */0;
+                    }), newProperties), newProperties);
           if (match !== 0) {
             var childChildren = newChild.childNodes;
             patchVNodesOnElems(callbacks, newChild, childChildren, 0, /* [] */0, param[5]);
@@ -2774,7 +2897,7 @@ function patchVNodesOnElems_CreateElement(_callbacks, _param) {
             throw [
                   match_failure,
                   [
-                    "/home/overminddl1/ocaml/tmp/overbots/node_modules/bucklescript-tea/src/vdom.ml",
+                    "C:\\Users\\robertsong\\Projects\\tmp\\overbots\\node_modules\\bucklescript-tea\\src\\vdom.ml",
                     330,
                     30
                   ]
@@ -3176,7 +3299,7 @@ function patchVNodesIntoElement(callbacks, elem, oldVNodes, newVNodes) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function batch(cmds) {
   return /* Batch */__(1, [cmds]);
 }
@@ -3187,9 +3310,9 @@ function run(callbacks, param) {
   } else {
     switch (param.tag | 0) {
       case 1 : 
-          return fold_left(function (_, cmd) {
-                      return run(callbacks, cmd);
-                    }, /* () */0, param[0]);
+          return fold_left((function (_, cmd) {
+                        return run(callbacks, cmd);
+                      }), /* () */0, param[0]);
       case 0 : 
       case 2 : 
           return _1(param[0], callbacks);
@@ -3203,7 +3326,7 @@ var none = /* NoCmd */0;
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function batch$1(subs) {
   return /* Batch */__(0, [subs]);
 }
@@ -3211,9 +3334,9 @@ function batch$1(subs) {
 function registration(key, enableCall) {
   return /* Registration */__(1, [
             key,
-            function (callbacks) {
-              return _1(enableCall, callbacks[0]);
-            },
+            (function (callbacks) {
+                return _1(enableCall, callbacks[0]);
+              }),
             [/* None */0]
           ]);
 }
@@ -3390,13 +3513,13 @@ function null_undefined_to_opt(x) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function programStateWrapper(initModel, pump, shutdown) {
   var model = [initModel];
-  var callbacks = [/* record */[/* enqueue */function () {
-        console.log("INVALID enqueue CALL!");
-        return /* () */0;
-      }]];
+  var callbacks = [/* record */[/* enqueue */(function () {
+          console.log("INVALID enqueue CALL!");
+          return /* () */0;
+        })]];
   var pumperInterface = _1(pump, callbacks);
   var pending = [/* None */0];
   var handler = function (msg$$1) {
@@ -3432,10 +3555,10 @@ function programStateWrapper(initModel, pump, shutdown) {
   var finalizedCBs = /* record */[/* enqueue */handler];
   callbacks[0] = finalizedCBs;
   var pi_requestShutdown = function () {
-    callbacks[0] = /* record */[/* enqueue */function () {
-        console.log("INVALID message enqueued when shut down");
-        return /* () */0;
-      }];
+    callbacks[0] = /* record */[/* enqueue */(function () {
+          console.log("INVALID message enqueued when shut down");
+          return /* () */0;
+        })];
     var cmd = _1(shutdown, model[0]);
     _1(pumperInterface[/* shutdown */2], cmd);
     return /* () */0;
@@ -3450,110 +3573,110 @@ function programStateWrapper(initModel, pump, shutdown) {
 function programLoop(update, view, subscriptions, initModel, initCmd, param) {
   if (param) {
     var parentNode = param[0];
-    return function (callbacks) {
-      var priorRenderedVdom = [/* [] */0];
-      var latestModel = [initModel];
-      var nextFrameID = [/* None */0];
-      var doRender = function () {
-        var match = nextFrameID[0];
-        if (match) {
-          var newVdom_000 = _1(view, latestModel[0]);
-          var newVdom = /* :: */[
-            newVdom_000,
-            /* [] */0
-          ];
-          var justRenderedVdom = patchVNodesIntoElement(callbacks, parentNode, priorRenderedVdom[0], newVdom);
-          priorRenderedVdom[0] = justRenderedVdom;
-          nextFrameID[0] = /* None */0;
-          return /* () */0;
-        } else {
-          return /* () */0;
-        }
-      };
-      var scheduleRender = function () {
-        var match = nextFrameID[0];
-        if (match) {
-          return /* () */0;
-        } else {
-          nextFrameID[0] = /* Some */[-1];
-          return doRender(16);
-        }
-      };
-      var clearPnode = function () {
-        while(parentNode.childNodes.length > 0) {
-          var match = parentNode.firstChild;
-          if (match !== null) {
-            parentNode.removeChild(match);
+    return (function (callbacks) {
+        var priorRenderedVdom = [/* [] */0];
+        var latestModel = [initModel];
+        var nextFrameID = [/* None */0];
+        var doRender = function () {
+          var match = nextFrameID[0];
+          if (match) {
+            var newVdom_000 = _1(view, latestModel[0]);
+            var newVdom = /* :: */[
+              newVdom_000,
+              /* [] */0
+            ];
+            var justRenderedVdom = patchVNodesIntoElement(callbacks, parentNode, priorRenderedVdom[0], newVdom);
+            priorRenderedVdom[0] = justRenderedVdom;
+            nextFrameID[0] = /* None */0;
+            return /* () */0;
+          } else {
+            return /* () */0;
           }
-          
-        }
-        return /* () */0;
-      };
-      var oldSub = [/* NoSub */0];
-      var handleSubscriptionChange = function (model) {
-        var newSub = _1(subscriptions, model);
-        oldSub[0] = run$1(callbacks, callbacks, oldSub[0], newSub);
-        return /* () */0;
-      };
-      var handlerStartup = function () {
-        clearPnode(/* () */0);
-        run(callbacks, initCmd);
-        handleSubscriptionChange(latestModel[0]);
-        nextFrameID[0] = /* Some */[-1];
-        doRender(16);
-        return /* () */0;
-      };
-      var handler = function (model, msg$$1) {
-        var match = _2(update, model, msg$$1);
-        var newModel = match[0];
-        latestModel[0] = newModel;
-        run(callbacks, match[1]);
-        scheduleRender(/* () */0);
-        handleSubscriptionChange(newModel);
-        return newModel;
-      };
-      var handlerShutdown = function (cmd) {
-        nextFrameID[0] = /* None */0;
-        run(callbacks, cmd);
-        oldSub[0] = run$1(callbacks, callbacks, oldSub[0], /* NoSub */0);
-        priorRenderedVdom[0] = /* [] */0;
-        clearPnode(/* () */0);
-        return /* () */0;
-      };
-      return /* record */[
-              /* startup */handlerStartup,
-              /* handleMsg */handler,
-              /* shutdown */handlerShutdown
-            ];
-    };
+        };
+        var scheduleRender = function () {
+          var match = nextFrameID[0];
+          if (match) {
+            return /* () */0;
+          } else {
+            nextFrameID[0] = /* Some */[-1];
+            return doRender(16);
+          }
+        };
+        var clearPnode = function () {
+          while(parentNode.childNodes.length > 0) {
+            var match = parentNode.firstChild;
+            if (match !== null) {
+              parentNode.removeChild(match);
+            }
+            
+          }
+          return /* () */0;
+        };
+        var oldSub = [/* NoSub */0];
+        var handleSubscriptionChange = function (model) {
+          var newSub = _1(subscriptions, model);
+          oldSub[0] = run$1(callbacks, callbacks, oldSub[0], newSub);
+          return /* () */0;
+        };
+        var handlerStartup = function () {
+          clearPnode(/* () */0);
+          run(callbacks, initCmd);
+          handleSubscriptionChange(latestModel[0]);
+          nextFrameID[0] = /* Some */[-1];
+          doRender(16);
+          return /* () */0;
+        };
+        var handler = function (model, msg$$1) {
+          var match = _2(update, model, msg$$1);
+          var newModel = match[0];
+          latestModel[0] = newModel;
+          run(callbacks, match[1]);
+          scheduleRender(/* () */0);
+          handleSubscriptionChange(newModel);
+          return newModel;
+        };
+        var handlerShutdown = function (cmd) {
+          nextFrameID[0] = /* None */0;
+          run(callbacks, cmd);
+          oldSub[0] = run$1(callbacks, callbacks, oldSub[0], /* NoSub */0);
+          priorRenderedVdom[0] = /* [] */0;
+          clearPnode(/* () */0);
+          return /* () */0;
+        };
+        return /* record */[
+                /* startup */handlerStartup,
+                /* handleMsg */handler,
+                /* shutdown */handlerShutdown
+              ];
+      });
   } else {
-    return function (callbacks) {
-      var oldSub = [/* NoSub */0];
-      var handleSubscriptionChange = function (model) {
-        var newSub = _1(subscriptions, model);
-        oldSub[0] = run$1(callbacks, callbacks, oldSub[0], newSub);
-        return /* () */0;
-      };
-      return /* record */[
-              /* startup */function () {
-                run(callbacks, initCmd);
-                handleSubscriptionChange(initModel);
-                return /* () */0;
-              },
-              /* handleMsg */function (model, msg$$1) {
-                var match = _2(update, model, msg$$1);
-                var newModel = match[0];
-                run(callbacks, match[1]);
-                handleSubscriptionChange(newModel);
-                return newModel;
-              },
-              /* shutdown */function (cmd) {
-                run(callbacks, cmd);
-                oldSub[0] = run$1(callbacks, callbacks, oldSub[0], /* NoSub */0);
-                return /* () */0;
-              }
-            ];
-    };
+    return (function (callbacks) {
+        var oldSub = [/* NoSub */0];
+        var handleSubscriptionChange = function (model) {
+          var newSub = _1(subscriptions, model);
+          oldSub[0] = run$1(callbacks, callbacks, oldSub[0], newSub);
+          return /* () */0;
+        };
+        return /* record */[
+                /* startup */(function () {
+                    run(callbacks, initCmd);
+                    handleSubscriptionChange(initModel);
+                    return /* () */0;
+                  }),
+                /* handleMsg */(function (model, msg$$1) {
+                    var match = _2(update, model, msg$$1);
+                    var newModel = match[0];
+                    run(callbacks, match[1]);
+                    handleSubscriptionChange(newModel);
+                    return newModel;
+                  }),
+                /* shutdown */(function (cmd) {
+                    run(callbacks, cmd);
+                    oldSub[0] = run$1(callbacks, callbacks, oldSub[0], /* NoSub */0);
+                    return /* () */0;
+                  })
+              ];
+      });
   }
 }
 
@@ -3572,55 +3695,16 @@ function standardProgram(param, pnode, args) {
               /* update */param[/* update */1],
               /* view */param[/* view */2],
               /* subscriptions */param[/* subscriptions */3],
-              /* shutdown */function () {
-                return /* NoCmd */0;
-              }
+              /* shutdown */(function () {
+                  return /* NoCmd */0;
+                })
             ], pnode, args);
 }
 
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
-function performOpt(toOptionalMessage, param) {
-  var task = param[0];
-  return /* EnqueueCall */__(2, [function (callbacks) {
-              return _1(task, function (param) {
-                          if (param.tag) {
-                            throw [
-                                  failure,
-                                  "ERROR:  Task perfom returned error of never! Should not happen!"
-                                ];
-                          } else {
-                            var match = _1(toOptionalMessage, param[0]);
-                            if (match) {
-                              return _1(callbacks[0][/* enqueue */0], match[0]);
-                            } else {
-                              return /* () */0;
-                            }
-                          }
-                        });
-            }]);
-}
-
-function attemptOpt(resultToOptionalMessage, param) {
-  var task = param[0];
-  return /* EnqueueCall */__(2, [function (callbacks) {
-              return _1(task, function (value) {
-                          var match = _1(resultToOptionalMessage, value);
-                          if (match) {
-                            return _1(callbacks[0][/* enqueue */0], match[0]);
-                          } else {
-                            return /* () */0;
-                          }
-                        });
-            }]);
-}
-
-
-/* No side effect */
-
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function $$setInterval(cb, msTime) {
   return window.setInterval(cb, msTime);
 }
@@ -3628,16 +3712,16 @@ function $$setInterval(cb, msTime) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function every(interval, tagger) {
   var key = string_of_float(interval);
   var enableCall = function (callbacks) {
-    var id = $$setInterval(function () {
-          return _1(callbacks[/* enqueue */0], _1(tagger, Date.now()));
-        }, interval);
-    return function () {
-      return window.clearTimeout(id);
-    };
+    var id = $$setInterval((function () {
+            return _1(callbacks[/* enqueue */0], _1(tagger, Date.now()));
+          }), interval);
+    return (function () {
+        return window.clearTimeout(id);
+      });
   };
   return registration(key, enableCall);
 }
@@ -3647,7 +3731,7 @@ var second = 1000.0 * 1.0;
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function text$1(str) {
   return /* Text */__(1, [str]);
 }
@@ -5134,7 +5218,7 @@ function Make$1(funarg) {
                   }
                   
                 };
-                return sub(length(l$1), l$1)[0];
+                return sub(length$2(l$1), l$1)[0];
               } else {
                 return add(match$3[0], add(x3, add(x2, add(x1, singleton(x0)))));
               }
@@ -5187,7 +5271,7 @@ function Make$1(funarg) {
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function timeMsg(param_0, param_1) {
   return /* TimeMsg */[
           param_0,
@@ -5224,7 +5308,7 @@ function updateFrame(param_0) {
 
 /* ResourceMap Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function bool_flag_exists(fid, model) {
   return _2(BoolFlagSet[/* mem */2], fid, model[/* bool_flags */5]);
 }
@@ -5278,7 +5362,7 @@ function float_flag_add(fid, delta, model) {
 
 /* Overbots_types Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function shown(model) {
   return bool_flag_exists(/* InternalPowerEnabled */0, model);
 }
@@ -5361,15 +5445,15 @@ var all_resources = /* :: */[
   all_resources_001
 ];
 
-var id_resource_mapping = fold_left(function (map$$1, r) {
-      return _3(ResourceMap[/* add */3], r[/* id */0], r, map$$1);
-    }, ResourceMap[/* empty */0], all_resources);
+var id_resource_mapping = fold_left((function (map$$1, r) {
+        return _3(ResourceMap[/* add */3], r[/* id */0], r, map$$1);
+      }), ResourceMap[/* empty */0], all_resources);
 
 var StringMap = Make([compare$1]);
 
-var idname_resource_mapping = fold_left(function (map$$1, r) {
-      return _3(StringMap[/* add */3], r[/* idname */3], r, map$$1);
-    }, StringMap[/* empty */0], all_resources);
+var idname_resource_mapping = fold_left((function (map$$1, r) {
+        return _3(StringMap[/* add */3], r[/* idname */3], r, map$$1);
+      }), StringMap[/* empty */0], all_resources);
 
 function get_resource_module(rid) {
   return _2(ResourceMap[/* find */21], rid, id_resource_mapping);
@@ -5483,7 +5567,7 @@ function reset_cache(model) {
 
 /* id_resource_mapping Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function perform_action(model, param) {
   if (typeof param === "number") {
     return model;
@@ -5695,7 +5779,7 @@ function update_timeactions(model, time) {
 
 /* Overbots_flags Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function button_cost(_, param) {
   if (param !== 0) {
     return /* :: */[
@@ -5817,7 +5901,7 @@ var displayed_buttons = /* :: */[
 
 /* Overbots_flags Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function view_container(enabled, id$$1, title, children) {
   if (enabled) {
     return div$2(/* None */0, /* None */0, /* :: */[
@@ -5903,9 +5987,9 @@ function view_resources_category_resource(model, r) {
 
 function view_resources_categories(model, param) {
   var name$$1 = param[0];
-  var children = flatten(map$1(function (param) {
-            return view_resources_category_resource(model, param);
-          }, param[2]));
+  var children = flatten(map$2((function (param) {
+              return view_resources_category_resource(model, param);
+            }), param[2]));
   if (children) {
     var children$1 = name$$1 === "" ? children : /* :: */[
         div$2(/* None */0, /* None */0, /* :: */[
@@ -5930,9 +6014,9 @@ function view_resources_categories(model, param) {
 }
 
 function view_resources(model) {
-  return flatten(map$1(function (param) {
-                  return view_resources_categories(model, param);
-                }, displayed_resources));
+  return flatten(map$2((function (param) {
+                    return view_resources_categories(model, param);
+                  }), displayed_resources));
 }
 
 function view_button(model, param) {
@@ -5960,9 +6044,9 @@ function view_button(model, param) {
 }
 
 function view_buttons_category(model, param) {
-  var children = flatten(map$1(function (param) {
-            return view_button(model, param);
-          }, param[2]));
+  var children = flatten(map$2((function (param) {
+              return view_button(model, param);
+            }), param[2]));
   if (children) {
     var children_000 = div$2(/* None */0, /* None */0, /* :: */[
           class$prime("category-title"),
@@ -5988,9 +6072,9 @@ function view_buttons_category(model, param) {
 }
 
 function view_buttons(model) {
-  return flatten(map$1(function (param) {
-                  return view_buttons_category(model, param);
-                }, displayed_buttons));
+  return flatten(map$2((function (param) {
+                    return view_buttons_category(model, param);
+                  }), displayed_buttons));
 }
 
 function view_msg(_, param) {
@@ -6010,9 +6094,9 @@ function view_msg(_, param) {
 }
 
 function view_msgs(model) {
-  return map$1(function (param) {
-              return view_msg(model, param);
-            }, model[/* msgs */3]);
+  return map$2((function (param) {
+                return view_msg(model, param);
+              }), model[/* msgs */3]);
 }
 
 function view(model) {
@@ -6052,7 +6136,7 @@ function view(model) {
 
 /* Overbots_types Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function name$2$1() {
   return "Sunlight";
 }
@@ -6124,9 +6208,9 @@ var all_transformers = /* :: */[
 ];
 
 function enabled_transformers(model) {
-  return filter(function (T) {
-                return _1(T[/* enabled */1], model);
-              })(all_transformers);
+  return filter((function (T) {
+                  return _1(T[/* enabled */1], model);
+                }))(all_transformers);
 }
 
 function transformer_delta(param) {
@@ -6144,18 +6228,18 @@ function transformer_delta(param) {
 }
 
 function calculate_resource_delta(model, map$$1, T) {
-  return fold_left(function (map$$1, transformation) {
-              var match = transformer_delta(transformation);
-              var rid = match[0];
-              var delta = match[1] + _2(ResourceMap[/* find */21], rid, map$$1);
-              return _3(ResourceMap[/* add */3], rid, delta, map$$1);
-            }, map$$1, _1(T[/* transformers */2], model));
+  return fold_left((function (map$$1, transformation) {
+                var match = transformer_delta(transformation);
+                var rid = match[0];
+                var delta = match[1] + _2(ResourceMap[/* find */21], rid, map$$1);
+                return _3(ResourceMap[/* add */3], rid, delta, map$$1);
+              }), map$$1, _1(T[/* transformers */2], model));
 }
 
 function calculate_resource_deltas(model, transformers$$1) {
-  return fold_left(function (param, param$1) {
-              return calculate_resource_delta(model, param, param$1);
-            }, init_resources_values, transformers$$1);
+  return fold_left((function (param, param$1) {
+                return calculate_resource_delta(model, param, param$1);
+              }), init_resources_values, transformers$$1);
 }
 
 function calculate_delta_to_next_filled(model, rid, delta, old_time) {
@@ -6181,22 +6265,22 @@ function calculate_delta_to_next_filled(model, rid, delta, old_time) {
 }
 
 function calculate_deltas_to_next_filled(model, resource_deltas$$1) {
-  return _3(ResourceMap[/* fold */10], function (param, param$1, param$2) {
-              return calculate_delta_to_next_filled(model, param, param$1, param$2);
-            }, resource_deltas$$1, max_float);
+  return _3(ResourceMap[/* fold */10], (function (param, param$1, param$2) {
+                return calculate_delta_to_next_filled(model, param, param$1, param$2);
+              }), resource_deltas$$1, max_float);
 }
 
 function apply_resource_deltas(model, resource_deltas$$1, cur_time) {
   var time_delta = cur_time - model[/* gametime */2];
-  return _3(ResourceMap[/* fold */10], function (rid, delta, model) {
-              var delta$1 = delta * time_delta;
-              var match = add_resource_value(rid, delta$1, model);
-              if (typeof match === "number") {
-                return model;
-              } else {
-                return match[0];
-              }
-            }, resource_deltas$$1, model);
+  return _3(ResourceMap[/* fold */10], (function (rid, delta, model) {
+                var delta$1 = delta * time_delta;
+                var match = add_resource_value(rid, delta$1, model);
+                if (typeof match === "number") {
+                  return model;
+                } else {
+                  return match[0];
+                }
+              }), resource_deltas$$1, model);
 }
 
 function update_transformations(_model, new_time) {
@@ -6250,7 +6334,7 @@ function update_transformations(_model, new_time) {
 
 /* Overbots_flags Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function pruneOldMsgs(msgs) {
   var _i = 20;
   var _acc = /* [] */0;
@@ -6316,7 +6400,7 @@ function update_state(model, new_time) {
 
 /* Overbots_actions Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function every$1($staropt$star, tagger) {
   var key = $staropt$star ? $staropt$star[0] : "";
   var enableCall = function (callbacks) {
@@ -6344,16 +6428,16 @@ function every$1($staropt$star, tagger) {
       }
     };
     id[0] = /* Some */[window.requestAnimationFrame(onFrame)];
-    return function () {
-      var match = id[0];
-      if (match) {
-        window.cancelAnimationFrame(match[0]);
-        id[0] = /* None */0;
-        return /* () */0;
-      } else {
-        return /* () */0;
-      }
-    };
+    return (function () {
+        var match = id[0];
+        if (match) {
+          window.cancelAnimationFrame(match[0]);
+          id[0] = /* None */0;
+          return /* () */0;
+        } else {
+          return /* () */0;
+        }
+      });
   };
   return registration(key, enableCall);
 }
@@ -6476,12 +6560,10 @@ function reifyType$1(x) {
         ];
 }
 
-var reify_type$1 = reifyType$1;
-
 
 /* No side effect */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function string_of_json($staropt$star, value) {
   var indent = $staropt$star ? $staropt$star[0] : 2;
   if (value !== undefined) {
@@ -6498,12 +6580,12 @@ function string_of_json($staropt$star, value) {
 
 var $$null$1 = null;
 
-var reify_type$$1 = reify_type$1;
+var reifyType$$1 = reifyType$1;
 
 
 /* null Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function height(param) {
   if (param) {
     return param[4];
@@ -7185,234 +7267,234 @@ var ObjectDict = [
 
 var ParseFail = create("Tea_json.Decoder.ParseFail");
 
-var string = /* Decoder */[function (value) {
-    var match = reify_type$$1(value);
-    if (match[0] !== 0) {
-      return /* Error */__(1, ["Non-string value"]);
-    } else {
-      return /* Ok */__(0, [match[1]]);
-    }
-  }];
-
-var $$int = /* Decoder */[function (value) {
-    var match = reify_type$$1(value);
-    if (match[0] !== 1) {
-      return /* Error */__(1, ["Non-int value"]);
-    } else {
-      var n = match[1];
-      if (n > min_int && n < max_int) {
-        return /* Ok */__(0, [n | 0]);
+var string = /* Decoder */[(function (value) {
+      var match = reifyType$$1(value);
+      if (match[0] !== 0) {
+        return /* Error */__(1, ["Non-string value"]);
       } else {
-        return /* Error */__(1, ["number out of int range"]);
+        return /* Ok */__(0, [match[1]]);
       }
-    }
-  }];
+    })];
 
-var $$float = /* Decoder */[function (value) {
-    var match = reify_type$$1(value);
-    if (match[0] !== 1) {
-      return /* Error */__(1, ["Non-float-value"]);
-    } else {
-      return /* Ok */__(0, [match[1]]);
-    }
-  }];
+var $$int = /* Decoder */[(function (value) {
+      var match = reifyType$$1(value);
+      if (match[0] !== 1) {
+        return /* Error */__(1, ["Non-int value"]);
+      } else {
+        var n = match[1];
+        if (n > min_int && n < max_int) {
+          return /* Ok */__(0, [n | 0]);
+        } else {
+          return /* Error */__(1, ["number out of int range"]);
+        }
+      }
+    })];
 
-var bool = /* Decoder */[function (value) {
-    var match = reify_type$$1(value);
-    if (match[0] !== 4) {
-      return /* Error */__(1, ["Non-boolean value"]);
-    } else {
-      return /* Ok */__(0, [+match[1]]);
-    }
-  }];
+var $$float = /* Decoder */[(function (value) {
+      var match = reifyType$$1(value);
+      if (match[0] !== 1) {
+        return /* Error */__(1, ["Non-float-value"]);
+      } else {
+        return /* Ok */__(0, [match[1]]);
+      }
+    })];
+
+var bool = /* Decoder */[(function (value) {
+      var match = reifyType$$1(value);
+      if (match[0] !== 4) {
+        return /* Error */__(1, ["Non-boolean value"]);
+      } else {
+        return /* Ok */__(0, [+match[1]]);
+      }
+    })];
 
 function $$null$$1(v) {
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] >= 5) {
-              return /* Ok */__(0, [v]);
-            } else {
-              return /* Error */__(1, ["Non-null value"]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] >= 5) {
+                return /* Ok */__(0, [v]);
+              } else {
+                return /* Error */__(1, ["Non-null value"]);
+              }
+            })];
 }
 
 function list(param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] !== 3) {
-              return /* Error */__(1, ["Non-list value"]);
-            } else {
-              var parse = function (v) {
-                var match = _1(decoder, v);
-                if (match.tag) {
-                  throw [
-                        ParseFail,
-                        match[0]
-                      ];
-                } else {
-                  return match[0];
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] !== 3) {
+                return /* Error */__(1, ["Non-list value"]);
+              } else {
+                var parse = function (v) {
+                  var match = _1(decoder, v);
+                  if (match.tag) {
+                    throw [
+                          ParseFail,
+                          match[0]
+                        ];
+                  } else {
+                    return match[0];
+                  }
+                };
+                try {
+                  return /* Ok */__(0, [map$2(parse, to_list(match[1]))]);
                 }
-              };
-              try {
-                return /* Ok */__(0, [map$1(parse, to_list(match[1]))]);
-              }
-              catch (raw_exn){
-                var exn = internalToOCamlException(raw_exn);
-                if (exn[0] === ParseFail) {
-                  return /* Error */__(1, ["Invalid list parsing: " + exn[1]]);
-                } else {
-                  throw exn;
+                catch (raw_exn){
+                  var exn = internalToOCamlException(raw_exn);
+                  if (exn[0] === ParseFail) {
+                    return /* Error */__(1, ["Invalid list parsing: " + exn[1]]);
+                  } else {
+                    throw exn;
+                  }
                 }
               }
-            }
-          }];
+            })];
 }
 
 function array(param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] !== 3) {
-              return /* Error */__(1, ["Non-array value"]);
-            } else {
-              var parse = function (v) {
-                var match = _1(decoder, v);
-                if (match.tag) {
-                  throw [
-                        ParseFail,
-                        match[0]
-                      ];
-                } else {
-                  return match[0];
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] !== 3) {
+                return /* Error */__(1, ["Non-array value"]);
+              } else {
+                var parse = function (v) {
+                  var match = _1(decoder, v);
+                  if (match.tag) {
+                    throw [
+                          ParseFail,
+                          match[0]
+                        ];
+                  } else {
+                    return match[0];
+                  }
+                };
+                try {
+                  return /* Ok */__(0, [map$9(parse, match[1])]);
                 }
-              };
-              try {
-                return /* Ok */__(0, [map$9(parse, match[1])]);
-              }
-              catch (raw_exn){
-                var exn = internalToOCamlException(raw_exn);
-                if (exn[0] === ParseFail) {
-                  return /* Error */__(1, ["Invalid array parsing: " + exn[1]]);
-                } else {
-                  throw exn;
+                catch (raw_exn){
+                  var exn = internalToOCamlException(raw_exn);
+                  if (exn[0] === ParseFail) {
+                    return /* Error */__(1, ["Invalid array parsing: " + exn[1]]);
+                  } else {
+                    throw exn;
+                  }
                 }
               }
-            }
-          }];
+            })];
 }
 
 function keyValuePairs(param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] !== 2) {
-              return /* Error */__(1, ["Non-keyValuePair value"]);
-            } else {
-              var o = match[1];
-              var keys = Object.keys(o);
-              var parse = function (k, l) {
-                var match = o[k];
-                if (match !== undefined) {
-                  var match$1 = _1(decoder, match);
-                  if (match$1.tag) {
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] !== 2) {
+                return /* Error */__(1, ["Non-keyValuePair value"]);
+              } else {
+                var o = match[1];
+                var keys = Object.keys(o);
+                var parse = function (k, l) {
+                  var match = o[k];
+                  if (match !== undefined) {
+                    var match$1 = _1(decoder, match);
+                    if (match$1.tag) {
+                      throw [
+                            ParseFail,
+                            match$1[0]
+                          ];
+                    } else {
+                      return /* :: */[
+                              /* tuple */[
+                                k,
+                                match$1[0]
+                              ],
+                              l
+                            ];
+                    }
+                  } else {
                     throw [
                           ParseFail,
-                          match$1[0]
+                          "Key is undefined: " + k
                         ];
-                  } else {
-                    return /* :: */[
-                            /* tuple */[
-                              k,
-                              match$1[0]
-                            ],
-                            l
-                          ];
                   }
-                } else {
-                  throw [
-                        ParseFail,
-                        "Key is undefined: " + k
-                      ];
+                };
+                try {
+                  return /* Ok */__(0, [fold_right$1(parse, keys, /* [] */0)]);
                 }
-              };
-              try {
-                return /* Ok */__(0, [fold_right$1(parse, keys, /* [] */0)]);
-              }
-              catch (raw_exn){
-                var exn = internalToOCamlException(raw_exn);
-                if (exn[0] === ParseFail) {
-                  return /* Error */__(1, ["Invalid keyValuePair parsing: " + exn[1]]);
-                } else {
-                  throw exn;
+                catch (raw_exn){
+                  var exn = internalToOCamlException(raw_exn);
+                  if (exn[0] === ParseFail) {
+                    return /* Error */__(1, ["Invalid keyValuePair parsing: " + exn[1]]);
+                  } else {
+                    throw exn;
+                  }
                 }
               }
-            }
-          }];
+            })];
 }
 
 function dict(param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] !== 2) {
-              return /* Error */__(1, ["Non-dict value"]);
-            } else {
-              var o = match[1];
-              var keys = Object.keys(o);
-              var parse = function (k, d) {
-                var match = o[k];
-                if (match !== undefined) {
-                  var match$1 = _1(decoder, match);
-                  if (match$1.tag) {
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] !== 2) {
+                return /* Error */__(1, ["Non-dict value"]);
+              } else {
+                var o = match[1];
+                var keys = Object.keys(o);
+                var parse = function (k, d) {
+                  var match = o[k];
+                  if (match !== undefined) {
+                    var match$1 = _1(decoder, match);
+                    if (match$1.tag) {
+                      throw [
+                            ParseFail,
+                            match$1[0]
+                          ];
+                    } else {
+                      return add$1(k, match$1[0], d);
+                    }
+                  } else {
                     throw [
                           ParseFail,
-                          match$1[0]
+                          "Key is undefined: " + k
                         ];
-                  } else {
-                    return add$1(k, match$1[0], d);
                   }
-                } else {
-                  throw [
-                        ParseFail,
-                        "Key is undefined: " + k
-                      ];
+                };
+                try {
+                  return /* Ok */__(0, [fold_right$1(parse, keys, /* Empty */0)]);
                 }
-              };
-              try {
-                return /* Ok */__(0, [fold_right$1(parse, keys, /* Empty */0)]);
-              }
-              catch (raw_exn){
-                var exn = internalToOCamlException(raw_exn);
-                if (exn[0] === ParseFail) {
-                  return /* Error */__(1, ["Invalid dict parsing: " + exn[1]]);
-                } else {
-                  throw exn;
+                catch (raw_exn){
+                  var exn = internalToOCamlException(raw_exn);
+                  if (exn[0] === ParseFail) {
+                    return /* Error */__(1, ["Invalid dict parsing: " + exn[1]]);
+                  } else {
+                    throw exn;
+                  }
                 }
               }
-            }
-          }];
+            })];
 }
 
 function field(key, param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] !== 2) {
-              return /* Error */__(1, ["Non-fieldable value"]);
-            } else {
-              var match$1 = match[1][key];
-              if (match$1 !== undefined) {
-                return _1(decoder, match$1);
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] !== 2) {
+                return /* Error */__(1, ["Non-fieldable value"]);
               } else {
-                throw [
-                      ParseFail,
-                      "Field Value is undefined: " + key
-                    ];
+                var match$1 = match[1][key];
+                if (match$1 !== undefined) {
+                  return _1(decoder, match$1);
+                } else {
+                  throw [
+                        ParseFail,
+                        "Field Value is undefined: " + key
+                      ];
+                }
               }
-            }
-          }];
+            })];
 }
 
 function at(fields, dec) {
@@ -7421,101 +7503,101 @@ function at(fields, dec) {
 
 function index$2(idx, param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = reify_type$$1(value);
-            if (match[0] !== 3) {
-              return /* Error */__(1, ["Non-array value"]);
-            } else {
-              var a = match[1];
-              if (idx < 0 || idx > a.length) {
-                return /* Error */__(1, ["Array index out of range: " + idx]);
+  return /* Decoder */[(function (value) {
+              var match = reifyType$$1(value);
+              if (match[0] !== 3) {
+                return /* Error */__(1, ["Non-array value"]);
               } else {
-                return _1(decoder, caml_array_get(a, idx));
+                var a = match[1];
+                if (idx < 0 || idx > a.length) {
+                  return /* Error */__(1, ["Array index out of range: " + idx]);
+                } else {
+                  return _1(decoder, caml_array_get(a, idx));
+                }
               }
-            }
-          }];
+            })];
 }
 
 function maybe(param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder, value);
-            if (match.tag) {
-              return /* Ok */__(0, [/* None */0]);
-            } else {
-              return /* Ok */__(0, [/* Some */[match[0]]]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder, value);
+              if (match.tag) {
+                return /* Ok */__(0, [/* None */0]);
+              } else {
+                return /* Ok */__(0, [/* Some */[match[0]]]);
+              }
+            })];
 }
 
 function oneOf(decoders) {
-  return /* Decoder */[function (value) {
-            var v = value;
-            var _param = decoders;
-            while(true) {
-              var param = _param;
-              if (param) {
-                var ok = _1(param[0][0], v);
-                if (ok.tag) {
-                  _param = param[1];
-                  continue ;
-                  
+  return /* Decoder */[(function (value) {
+              var v = value;
+              var _param = decoders;
+              while(true) {
+                var param = _param;
+                if (param) {
+                  var ok = _1(param[0][0], v);
+                  if (ok.tag) {
+                    _param = param[1];
+                    continue ;
+                    
+                  } else {
+                    return ok;
+                  }
                 } else {
-                  return ok;
+                  return /* Error */__(1, ["No one-of's matched"]);
                 }
-              } else {
-                return /* Error */__(1, ["No one-of's matched"]);
               }
-            }
-          }];
+            })];
 }
 
 function map$1$1(mapper, param) {
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map failed"]);
-            } else {
-              return /* Ok */__(0, [_1(mapper, match[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map failed"]);
+              } else {
+                return /* Ok */__(0, [_1(mapper, match[0])]);
+              }
+            })];
 }
 
 function map2$2(mapper, param, param$1) {
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map2 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map2 failed"]);
-            } else {
-              return /* Ok */__(0, [_2(mapper, match[0], match$1[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map2 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map2 failed"]);
+              } else {
+                return /* Ok */__(0, [_2(mapper, match[0], match$1[0])]);
+              }
+            })];
 }
 
 function map3$1(mapper, param, param$1, param$2) {
   var decoder3 = param$2[0];
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            var match$2 = _1(decoder3, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map3 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map3 failed"]);
-            } else if (match$2.tag) {
-              return /* Error */__(1, ["map3 failed"]);
-            } else {
-              return /* Ok */__(0, [_3(mapper, match[0], match$1[0], match$2[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              var match$2 = _1(decoder3, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map3 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map3 failed"]);
+              } else if (match$2.tag) {
+                return /* Error */__(1, ["map3 failed"]);
+              } else {
+                return /* Ok */__(0, [_3(mapper, match[0], match$1[0], match$2[0])]);
+              }
+            })];
 }
 
 function map4$1(mapper, param, param$1, param$2, param$3) {
@@ -7523,23 +7605,23 @@ function map4$1(mapper, param, param$1, param$2, param$3) {
   var decoder3 = param$2[0];
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            var match$2 = _1(decoder3, value);
-            var match$3 = _1(decoder4, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map4 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map4 failed"]);
-            } else if (match$2.tag) {
-              return /* Error */__(1, ["map4 failed"]);
-            } else if (match$3.tag) {
-              return /* Error */__(1, ["map4 failed"]);
-            } else {
-              return /* Ok */__(0, [_4(mapper, match[0], match$1[0], match$2[0], match$3[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              var match$2 = _1(decoder3, value);
+              var match$3 = _1(decoder4, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map4 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map4 failed"]);
+              } else if (match$2.tag) {
+                return /* Error */__(1, ["map4 failed"]);
+              } else if (match$3.tag) {
+                return /* Error */__(1, ["map4 failed"]);
+              } else {
+                return /* Ok */__(0, [_4(mapper, match[0], match$1[0], match$2[0], match$3[0])]);
+              }
+            })];
 }
 
 function map5$1(mapper, param, param$1, param$2, param$3, param$4) {
@@ -7548,26 +7630,26 @@ function map5$1(mapper, param, param$1, param$2, param$3, param$4) {
   var decoder3 = param$2[0];
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            var match$2 = _1(decoder3, value);
-            var match$3 = _1(decoder4, value);
-            var match$4 = _1(decoder5, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map5 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map5 failed"]);
-            } else if (match$2.tag) {
-              return /* Error */__(1, ["map5 failed"]);
-            } else if (match$3.tag) {
-              return /* Error */__(1, ["map5 failed"]);
-            } else if (match$4.tag) {
-              return /* Error */__(1, ["map5 failed"]);
-            } else {
-              return /* Ok */__(0, [_5(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              var match$2 = _1(decoder3, value);
+              var match$3 = _1(decoder4, value);
+              var match$4 = _1(decoder5, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map5 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map5 failed"]);
+              } else if (match$2.tag) {
+                return /* Error */__(1, ["map5 failed"]);
+              } else if (match$3.tag) {
+                return /* Error */__(1, ["map5 failed"]);
+              } else if (match$4.tag) {
+                return /* Error */__(1, ["map5 failed"]);
+              } else {
+                return /* Ok */__(0, [_5(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0])]);
+              }
+            })];
 }
 
 function map6$1(mapper, param, param$1, param$2, param$3, param$4, param$5) {
@@ -7577,29 +7659,29 @@ function map6$1(mapper, param, param$1, param$2, param$3, param$4, param$5) {
   var decoder3 = param$2[0];
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            var match$2 = _1(decoder3, value);
-            var match$3 = _1(decoder4, value);
-            var match$4 = _1(decoder5, value);
-            var match$5 = _1(decoder6, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map6 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map6 failed"]);
-            } else if (match$2.tag) {
-              return /* Error */__(1, ["map6 failed"]);
-            } else if (match$3.tag) {
-              return /* Error */__(1, ["map6 failed"]);
-            } else if (match$4.tag) {
-              return /* Error */__(1, ["map6 failed"]);
-            } else if (match$5.tag) {
-              return /* Error */__(1, ["map6 failed"]);
-            } else {
-              return /* Ok */__(0, [_6(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0], match$5[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              var match$2 = _1(decoder3, value);
+              var match$3 = _1(decoder4, value);
+              var match$4 = _1(decoder5, value);
+              var match$5 = _1(decoder6, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map6 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map6 failed"]);
+              } else if (match$2.tag) {
+                return /* Error */__(1, ["map6 failed"]);
+              } else if (match$3.tag) {
+                return /* Error */__(1, ["map6 failed"]);
+              } else if (match$4.tag) {
+                return /* Error */__(1, ["map6 failed"]);
+              } else if (match$5.tag) {
+                return /* Error */__(1, ["map6 failed"]);
+              } else {
+                return /* Ok */__(0, [_6(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0], match$5[0])]);
+              }
+            })];
 }
 
 function map7(mapper, param, param$1, param$2, param$3, param$4, param$5, param$6) {
@@ -7610,32 +7692,32 @@ function map7(mapper, param, param$1, param$2, param$3, param$4, param$5, param$
   var decoder3 = param$2[0];
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            var match$2 = _1(decoder3, value);
-            var match$3 = _1(decoder4, value);
-            var match$4 = _1(decoder5, value);
-            var match$5 = _1(decoder6, value);
-            var match$6 = _1(decoder7, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else if (match$2.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else if (match$3.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else if (match$4.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else if (match$5.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else if (match$6.tag) {
-              return /* Error */__(1, ["map7 failed"]);
-            } else {
-              return /* Ok */__(0, [_7(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0], match$5[0], match$6[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              var match$2 = _1(decoder3, value);
+              var match$3 = _1(decoder4, value);
+              var match$4 = _1(decoder5, value);
+              var match$5 = _1(decoder6, value);
+              var match$6 = _1(decoder7, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else if (match$2.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else if (match$3.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else if (match$4.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else if (match$5.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else if (match$6.tag) {
+                return /* Error */__(1, ["map7 failed"]);
+              } else {
+                return /* Ok */__(0, [_7(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0], match$5[0], match$6[0])]);
+              }
+            })];
 }
 
 function map8(mapper, param, param$1, param$2, param$3, param$4, param$5, param$6, param$7) {
@@ -7647,79 +7729,79 @@ function map8(mapper, param, param$1, param$2, param$3, param$4, param$5, param$
   var decoder3 = param$2[0];
   var decoder2 = param$1[0];
   var decoder1 = param[0];
-  return /* Decoder */[function (value) {
-            var match = _1(decoder1, value);
-            var match$1 = _1(decoder2, value);
-            var match$2 = _1(decoder3, value);
-            var match$3 = _1(decoder4, value);
-            var match$4 = _1(decoder5, value);
-            var match$5 = _1(decoder6, value);
-            var match$6 = _1(decoder7, value);
-            var match$7 = _1(decoder8, value);
-            if (match.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$1.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$2.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$3.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$4.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$5.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$6.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else if (match$7.tag) {
-              return /* Error */__(1, ["map8 failed"]);
-            } else {
-              return /* Ok */__(0, [_8(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0], match$5[0], match$6[0], match$7[0])]);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var match = _1(decoder1, value);
+              var match$1 = _1(decoder2, value);
+              var match$2 = _1(decoder3, value);
+              var match$3 = _1(decoder4, value);
+              var match$4 = _1(decoder5, value);
+              var match$5 = _1(decoder6, value);
+              var match$6 = _1(decoder7, value);
+              var match$7 = _1(decoder8, value);
+              if (match.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$1.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$2.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$3.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$4.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$5.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$6.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else if (match$7.tag) {
+                return /* Error */__(1, ["map8 failed"]);
+              } else {
+                return /* Ok */__(0, [_8(mapper, match[0], match$1[0], match$2[0], match$3[0], match$4[0], match$5[0], match$6[0], match$7[0])]);
+              }
+            })];
 }
 
 function succeed$1(v) {
-  return /* Decoder */[function () {
-            return /* Ok */__(0, [v]);
-          }];
+  return /* Decoder */[(function () {
+              return /* Ok */__(0, [v]);
+            })];
 }
 
 function fail$1(e) {
-  return /* Decoder */[function () {
-            return /* Error */__(1, [e]);
-          }];
+  return /* Decoder */[(function () {
+              return /* Error */__(1, [e]);
+            })];
 }
 
-var value$1 = /* Decoder */[function (value) {
-    return /* Ok */__(0, [value]);
-  }];
+var value$1 = /* Decoder */[(function (value) {
+      return /* Ok */__(0, [value]);
+    })];
 
 function andThen$1(func, param) {
   var decoder = param[0];
-  return /* Decoder */[function (value) {
-            var err = _1(decoder, value);
-            if (err.tag) {
-              return err;
-            } else {
-              var match = _1(func, err[0]);
-              return _1(match[0], value);
-            }
-          }];
+  return /* Decoder */[(function (value) {
+              var err = _1(decoder, value);
+              if (err.tag) {
+                return err;
+              } else {
+                var match = _1(func, err[0]);
+                return _1(match[0], value);
+              }
+            })];
 }
 
 function lazy_(func) {
-  return andThen$1(func, /* Decoder */[function () {
-                return /* Ok */__(0, [/* () */0]);
-              }]);
+  return andThen$1(func, /* Decoder */[(function () {
+                  return /* Ok */__(0, [/* () */0]);
+                })]);
 }
 
 function nullable(decoder) {
   return oneOf(/* :: */[
               $$null$$1(/* None */0),
               /* :: */[
-                map$1$1(function (v) {
-                      return /* Some */[v];
-                    }, decoder),
+                map$1$1((function (v) {
+                        return /* Some */[v];
+                      }), decoder),
                 /* [] */0
               ]
             ]);
@@ -7837,7 +7919,7 @@ var Encoder = /* module */[
 
 /* Web_json Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 function json_of_gamemsg(param) {
   return _1(Encoder[/* object_ */6], /* :: */[
               /* tuple */[
@@ -7909,35 +7991,35 @@ function json_string_of_model(indent, model) {
                       /* :: */[
                         /* tuple */[
                           "msgs",
-                          _1(Encoder[/* list */8], map$1(json_of_gamemsg, model[/* msgs */3]))
+                          _1(Encoder[/* list */8], map$2(json_of_gamemsg, model[/* msgs */3]))
                         ],
                         /* :: */[
                           /* tuple */[
                             "resource_values",
-                            _1(Encoder[/* object_ */6], map$1(function (param) {
-                                      return apply_on_tuple2(string_of_resource_flag, partial_arg, param);
-                                    }, _1(ResourceMap[/* bindings */16], model[/* resource_values */4])))
+                            _1(Encoder[/* object_ */6], map$2((function (param) {
+                                        return apply_on_tuple2(string_of_resource_flag, partial_arg, param);
+                                      }), _1(ResourceMap[/* bindings */16], model[/* resource_values */4])))
                           ],
                           /* :: */[
                             /* tuple */[
                               "bool_flags",
-                              _1(Encoder[/* list */8], map$1(function (bf) {
-                                        return _1(Encoder[/* string */1], string_of_bool_flag(bf));
-                                      }, _1(BoolFlagSet[/* elements */19], model[/* bool_flags */5])))
+                              _1(Encoder[/* list */8], map$2((function (bf) {
+                                          return _1(Encoder[/* string */1], string_of_bool_flag(bf));
+                                        }), _1(BoolFlagSet[/* elements */19], model[/* bool_flags */5])))
                             ],
                             /* :: */[
                               /* tuple */[
                                 "int_flags",
-                                _1(Encoder[/* object_ */6], map$1(function (param) {
-                                          return apply_on_tuple2(string_of_int_flag, partial_arg$1, param);
-                                        }, _1(IntFlagMap[/* bindings */16], model[/* int_flags */6])))
+                                _1(Encoder[/* object_ */6], map$2((function (param) {
+                                            return apply_on_tuple2(string_of_int_flag, partial_arg$1, param);
+                                          }), _1(IntFlagMap[/* bindings */16], model[/* int_flags */6])))
                               ],
                               /* :: */[
                                 /* tuple */[
                                   "float_flags",
-                                  _1(Encoder[/* object_ */6], map$1(function (param) {
-                                            return apply_on_tuple2(string_of_float_flag, partial_arg$2, param);
-                                          }, _1(FloatFlagMap[/* bindings */16], model[/* float_flags */7])))
+                                  _1(Encoder[/* object_ */6], map$2((function (param) {
+                                              return apply_on_tuple2(string_of_float_flag, partial_arg$2, param);
+                                            }), _1(FloatFlagMap[/* bindings */16], model[/* float_flags */7])))
                                 ],
                                 /* [] */0
                               ]
@@ -7955,73 +8037,73 @@ var decoder_of_gamemsg = _1(Decoder[/* oneOf */15], /* :: */[
       /* [] */0
     ]);
 
-var decoder_of_resource_values = _2(Decoder[/* map */16], function (param) {
-      return fold_left(function (map$$1, param) {
-                  var match = get_resource_module_by_idname(param[0]);
-                  if (match) {
-                    return _3(ResourceMap[/* add */3], match[0][/* id */0], param[1], map$$1);
-                  } else {
-                    return map$$1;
-                  }
-                }, init_resources_values, param);
-    }, _1(Decoder[/* keyValuePairs */9], Decoder[/* float */4]));
+var decoder_of_resource_values = _2(Decoder[/* map */16], (function (param) {
+        return fold_left((function (map$$1, param) {
+                      var match = get_resource_module_by_idname(param[0]);
+                      if (match) {
+                        return _3(ResourceMap[/* add */3], match[0][/* id */0], param[1], map$$1);
+                      } else {
+                        return map$$1;
+                      }
+                    }), init_resources_values, param);
+      }), _1(Decoder[/* keyValuePairs */9], Decoder[/* float */4]));
 
 var partial_arg$1 = BoolFlagSet[/* empty */0];
 
-var decoder_of_bool_flags = _2(Decoder[/* map */16], function (param) {
-      return fold_left(function (set, flag) {
-                  return _2(BoolFlagSet[/* add */3], flag, set);
-                }, partial_arg$1, param);
-    }, _1(Decoder[/* list */7], _2(Decoder[/* andThen */27], function (str) {
-              switch (str) {
-                case "DrillDeployed" : 
-                    return _1(Decoder[/* succeed */24], /* DrillDeployed */3);
-                case "InternalPowerEnabled" : 
-                    return _1(Decoder[/* succeed */24], /* InternalPowerEnabled */0);
-                case "SolarPanelsGenerating" : 
-                    return _1(Decoder[/* succeed */24], /* SolarPanelsGenerating */2);
-                case "SolarPanelsReadyToUnfold" : 
-                    return _1(Decoder[/* succeed */24], /* SolarPanelsReadyToUnfold */1);
-                default:
-                  return _1(Decoder[/* fail */25], "Unknown bool_flag of: " + str);
-              }
-            }, Decoder[/* string */2])));
+var decoder_of_bool_flags = _2(Decoder[/* map */16], (function (param) {
+        return fold_left((function (set, flag) {
+                      return _2(BoolFlagSet[/* add */3], flag, set);
+                    }), partial_arg$1, param);
+      }), _1(Decoder[/* list */7], _2(Decoder[/* andThen */27], (function (str) {
+                switch (str) {
+                  case "DrillDeployed" : 
+                      return _1(Decoder[/* succeed */24], /* DrillDeployed */3);
+                  case "InternalPowerEnabled" : 
+                      return _1(Decoder[/* succeed */24], /* InternalPowerEnabled */0);
+                  case "SolarPanelsGenerating" : 
+                      return _1(Decoder[/* succeed */24], /* SolarPanelsGenerating */2);
+                  case "SolarPanelsReadyToUnfold" : 
+                      return _1(Decoder[/* succeed */24], /* SolarPanelsReadyToUnfold */1);
+                  default:
+                    return _1(Decoder[/* fail */25], "Unknown bool_flag of: " + str);
+                }
+              }), Decoder[/* string */2])));
 
-var decoder_of_int_flags = _2(Decoder[/* andThen */27], function (lst) {
-      var match = fold_left(function (rmap, param) {
-            var id = param[0];
-            if (rmap.tag) {
-              return rmap;
-            } else if (id === "TimeActionIdx") {
-              return /* Ok */__(0, [_3(IntFlagMap[/* add */3], /* TimeActionIdx */0, param[1], rmap[0])]);
-            } else {
-              return /* Error */__(1, ["Unknown Int Flag: " + id]);
-            }
-          }, /* Ok */__(0, [init_int_flags]), lst);
-      if (match.tag) {
-        return _1(Decoder[/* fail */25], match[0]);
-      } else {
-        return _1(Decoder[/* succeed */24], match[0]);
-      }
-    }, _1(Decoder[/* keyValuePairs */9], Decoder[/* int */3]));
+var decoder_of_int_flags = _2(Decoder[/* andThen */27], (function (lst) {
+        var match = fold_left((function (rmap, param) {
+                var id = param[0];
+                if (rmap.tag) {
+                  return rmap;
+                } else if (id === "TimeActionIdx") {
+                  return /* Ok */__(0, [_3(IntFlagMap[/* add */3], /* TimeActionIdx */0, param[1], rmap[0])]);
+                } else {
+                  return /* Error */__(1, ["Unknown Int Flag: " + id]);
+                }
+              }), /* Ok */__(0, [init_int_flags]), lst);
+        if (match.tag) {
+          return _1(Decoder[/* fail */25], match[0]);
+        } else {
+          return _1(Decoder[/* succeed */24], match[0]);
+        }
+      }), _1(Decoder[/* keyValuePairs */9], Decoder[/* int */3]));
 
-var decoder_of_float_flags = _2(Decoder[/* andThen */27], function (lst) {
-      var match = fold_left(function (rmap, param) {
-            var id = param[0];
-            if (rmap.tag) {
-              return rmap;
-            } else if (id === "BasicSolarPanelSelfGeneration") {
-              return /* Ok */__(0, [_3(FloatFlagMap[/* add */3], /* BasicSolarPanelSelfGeneration */0, param[1], rmap[0])]);
-            } else {
-              return /* Error */__(1, ["Unknown Float Flag: " + id]);
-            }
-          }, /* Ok */__(0, [init_float_flags]), lst);
-      if (match.tag) {
-        return _1(Decoder[/* fail */25], match[0]);
-      } else {
-        return _1(Decoder[/* succeed */24], match[0]);
-      }
-    }, _1(Decoder[/* keyValuePairs */9], Decoder[/* float */4]));
+var decoder_of_float_flags = _2(Decoder[/* andThen */27], (function (lst) {
+        var match = fold_left((function (rmap, param) {
+                var id = param[0];
+                if (rmap.tag) {
+                  return rmap;
+                } else if (id === "BasicSolarPanelSelfGeneration") {
+                  return /* Ok */__(0, [_3(FloatFlagMap[/* add */3], /* BasicSolarPanelSelfGeneration */0, param[1], rmap[0])]);
+                } else {
+                  return /* Error */__(1, ["Unknown Float Flag: " + id]);
+                }
+              }), /* Ok */__(0, [init_float_flags]), lst);
+        if (match.tag) {
+          return _1(Decoder[/* fail */25], match[0]);
+        } else {
+          return _1(Decoder[/* succeed */24], match[0]);
+        }
+      }), _1(Decoder[/* keyValuePairs */9], Decoder[/* float */4]));
 
 function model_of_json_string(json_string) {
   var construct_model = function (start_realtime$$1, current_realtime$$1, gametime$$1, msgs$$1, resource_values$$1, bool_flags$$1, int_flags$$1, float_flags$$1) {
@@ -8054,7 +8136,7 @@ function model_of_json_string(json_string) {
 
 /* decoder_of_gamemsg Not a pure module */
 
-// Generated by BUCKLESCRIPT VERSION 1.7.3, PLEASE EDIT WITH CARE
+// Generated by BUCKLESCRIPT VERSION 1.7.5, PLEASE EDIT WITH CARE
 var serialized_name = "Overbots";
 
 function init() {
@@ -8069,17 +8151,17 @@ function init() {
     /* float_flags */init_float_flags,
     /* cache */init_cache
   ];
-  var load_data_task = _1(LocalStorage[/* getItem */0], serialized_name);
+  var load_data_task = _1(LocalStorage[/* getItem */4], serialized_name);
   return /* tuple */[
           model,
           batch(/* :: */[
-                attemptOpt(function (param) {
-                      if (param.tag) {
-                        return /* None */0;
-                      } else {
-                        return /* Some */[/* LoadData */__(2, [param[0]])];
-                      }
-                    }, load_data_task),
+                attemptOpt((function (param) {
+                        if (param.tag) {
+                          return /* None */0;
+                        } else {
+                          return /* Some */[/* LoadData */__(2, [param[0]])];
+                        }
+                      }), load_data_task),
                 /* [] */0
               ])
         ];
@@ -8090,9 +8172,9 @@ function update(model, param) {
     var json_string = json_string_of_model(0, model);
     return /* tuple */[
             model,
-            performOpt(function () {
-                  return /* None */0;
-                }, _2(LocalStorage[/* setItem */1], serialized_name, json_string))
+            attemptOpt((function () {
+                    return /* None */0;
+                  }), _2(LocalStorage[/* setItem */7], serialized_name, json_string))
           ];
   } else {
     switch (param.tag | 0) {
@@ -8124,9 +8206,9 @@ function update(model, param) {
             if (match.tag) {
               return /* tuple */[
                       model,
-                      performOpt(function () {
-                            return /* None */0;
-                          }, _2(LocalStorage[/* setItem */1], serialized_name, ""))
+                      attemptOpt((function () {
+                              return /* None */0;
+                            }), _2(LocalStorage[/* setItem */7], serialized_name, ""))
                     ];
             } else {
               return /* tuple */[
@@ -8145,9 +8227,9 @@ function subscriptions() {
   return batch$1(/* :: */[
               every$1(/* None */0, updateFrame),
               /* :: */[
-                every(10.0 * second, function () {
-                      return /* SaveData */0;
-                    }),
+                every(10.0 * second, (function () {
+                        return /* SaveData */0;
+                      })),
                 /* [] */0
               ]
             ]);

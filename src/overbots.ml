@@ -37,13 +37,13 @@ let update model = function
   | LoadData json_string ->
     let open Tea.Result in
     begin match Overbots_serialization.model_of_json_string json_string with
-      | Error _e -> (model, Tea_task.performOpt (fun _ -> None) (Ex.LocalStorage.setItem serialized_name ""))
+      | Error _e -> (model, Tea_task.attemptOpt (fun _ -> None) (Ex.LocalStorage.setItem serialized_name ""))
       | Ok model ->
         (model, Cmd.none)
     end
   | SaveData ->
     let json_string = Overbots_serialization.json_string_of_model 0 model in
-    (model, Tea_task.performOpt (fun _ -> None) (Ex.LocalStorage.setItem serialized_name json_string))
+    (model, Tea_task.attemptOpt (fun _ -> None) (Ex.LocalStorage.setItem serialized_name json_string))
 
 let subscriptions _model =
   Sub.batch [

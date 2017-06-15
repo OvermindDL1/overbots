@@ -4,13 +4,13 @@
   "description": "OverBots Incremental Game",
   "main": "index.js",
   "dependencies": {
-    "bs-platform": "^1.7.3",
-    "bucklescript-tea": "^0.5.0"
+    "bs-platform": "^1.7.5",
+    "bucklescript-tea": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.0.1",
-    "bs-platform": "^1.7.3",
-    "bucklescript-tea": "^0.3.2",
+    "bs-platform": "^1.7.5",
+    "bucklescript-tea": "^0.6.0",
     "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
